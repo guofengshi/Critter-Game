@@ -1,0 +1,29 @@
+name Small world
+size 11 16
+rock 2 4
+rock 3 4
+rock 3 5
+rock 5 5
+rock 2 6
+rock 3 6
+rock 5 6
+rock 1 7
+rock 3 7
+rock 6 7
+rock 7 7
+rock 1 8
+rock 3 8
+rock 5 8
+rock 2 9
+rock 3 9
+rock 7 9
+rock 3 10
+rock 5 11
+rock 6 11
+food 6 6 1000
+food 2 8 1000
+food 9 8 1000
+food 9 13 1000
+food 6 13 1000
+food 6 12 1000
+critter C:\Users\Tony\Desktop\School\Freshman\Semester_One\CS_2112\team-cw-gs522-tzz3-xl289-critter_world\src\test\resources\examples\example-critter.txt 4 8 1

@@ -1,0 +1,8 @@
+Smell:
+    Smell was implemented in two parts: The searching/sensing and then finding the closes food source.
+        Searching: The searching was done through representing the hexagonal grid in a 2D array and then running a Dijkstra's algorithm on it.
+                   We made a Vex class that held all the necessary information such as distance, Hex, color, etc.
+
+        Finding food: All of the food found with the search algorithm were placed into a priority queue sorted by distance.
+                      When returning a value, the closest food location is returned, and the optimal direction for the critter to turn to
+                      is found by backtracking from the food location to a hex adjacent to the critter, and then returning that direction.

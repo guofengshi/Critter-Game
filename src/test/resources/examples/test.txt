@@ -1,0 +1,8 @@
+species: test3
+memsize: 9
+defense: 2
+offense: 3
+size: 1
+energy: 555500
+posture: 17
+1 = 1 --> bud; // mostly soak up the rays

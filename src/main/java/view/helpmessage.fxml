@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="226.0" prefWidth="395.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="30.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.  Slide Zoom In/Out to zoom the critter world  " />
+      <Text layoutX="30.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2. If you cannot see the map after zooming in / out, try scrolling to the central" wrappingWidth="319.9873046875" />
+      <Text layoutX="30.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3. Click certain critter to check its information" wrappingWidth="319.9873046875" />
+      <Text layoutX="30.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4. Slide Simulation Rate to change the number of steps per second" wrappingWidth="334.27392578125" />
+      <Text layoutX="30.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5. Click Compatible Mode to enter the compatible mode; click again to exit" wrappingWidth="334.27392578125" />
+   </children>
+</Pane>

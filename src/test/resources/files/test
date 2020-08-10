@@ -1,0 +1,6 @@
+mem[7] != 17 --> mem[7]:= 17;
+nearby [ 3 ] = 0 and mem[4] > 2500 -->  bud;
+mem[4] > mem[3] * 400  and mem[3] < 7 -->  grow;
+ahead [ 0 ] < -1 and mem[4] < 500 * mem[3]  -->  eat;
+ahead [ 1 ] / 10  mod 100  != 17 and ahead [ 1 ] > 0 -->  attack;
+1 = 1 -->  wait;

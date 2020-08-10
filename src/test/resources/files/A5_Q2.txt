@@ -1,0 +1,21 @@
+species: Spiral
+memsize: 12
+defense: 2
+offense: 3
+size: 1
+energy: 500
+posture: 17
+
+//these the counters for a pseudo for-loop
+mem[8]:1
+mem[9]:0
+//This indicates how many sides it's traveled through
+mem[10]:6
+mem[11]:1
+
+mem[11]=1 --> mem[11]=0 right;
+mem[9]=mem[8] and mem[10]=6 --> mem[11]=1;
+mem[10]=6 --> mem[10]=0 mem[8]=mem[8]+1 forward;
+mem[9]=mem[8] --> mem[10]=mem[10]+1 mem[9]=0;
+mem[9]=0 --> mem[9]=mem[9]+1 left;
+mem[9]<mem[8]--> mem[9]=mem[9]+1 forward;

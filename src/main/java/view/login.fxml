@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Main">
+   <children>
+      <Text layoutX="181.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Critter World">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Text>
+      <TextField fx:id="level" layoutX="252.0" layoutY="146.0" />
+      <Label layoutX="181.0" layoutY="146.0" prefHeight="27.0" prefWidth="60.0" text="Level:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="138.0" layoutY="200.0" text="Password:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="password" layoutX="252.0" layoutY="200.0" />
+      <Button fx:id="login" layoutX="252.0" layoutY="256.0" mnemonicParsing="false" text="Login">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
