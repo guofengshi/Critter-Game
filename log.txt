@@ -1,0 +1,5168 @@
+commit d2c5418108bcee8f63a004cbfe4fab2c93765ff4
+Merge: e7e431b 6ca5b8f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 16:42:46 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit e7e431b5cdbf0d9b55734d5e484459cd0d9cb897
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 16:42:36 2018 -0500
+
+    Add comments for the server
+
+ src/main/java/clientserver/Server.java | 19 +++++++++++++++++--
+ 1 file changed, 17 insertions(+), 2 deletions(-)
+
+commit 6ca5b8f0488f1aa9de3f84491e67af3750ec39a0
+Merge: 2de2acd 87a4682
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 16:40:33 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 2de2acd0bffb33a5458b4851deb47bc86b9bbcf7
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 16:40:26 2018 -0500
+
+    add the javadoc for the bundles
+
+ src/main/java/clientserver/CritterBundle.java     | 3 +++
+ src/main/java/clientserver/CritterInfo.java       | 3 +++
+ src/main/java/clientserver/CritterInfoFull.java   | 3 +++
+ src/main/java/clientserver/CritterInfoPart.java   | 3 +++
+ src/main/java/clientserver/CritterListBundle.java | 3 +++
+ src/main/java/clientserver/HexInfo.java           | 3 +++
+ src/main/java/clientserver/LoginBundle.java       | 3 +++
+ src/main/java/clientserver/ObjectBundle.java      | 3 +++
+ src/main/java/clientserver/PositionBundle.java    | 3 +++
+ src/main/java/clientserver/RateBundle.java        | 3 +++
+ src/main/java/clientserver/RunBundle.java         | 3 +++
+ src/main/java/clientserver/SessionBundle.java     | 3 +++
+ src/main/java/clientserver/WorldBundle.java       | 3 +++
+ src/main/java/clientserver/WorldStepBundle.java   | 3 +++
+ 14 files changed, 42 insertions(+)
+
+commit 87a46825c2a59775f09c57df0613d9abdafb7f90
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 16:36:49 2018 -0500
+
+    Initialization and exceptions handling
+
+ src/main/java/clientserver/Server.java |   31 +-
+ src/main/java/main/Main.java           |  185 +---
+ src/main/java/view/ClientGUI.java      | 1766 ++++++++++++++++----------------
+ src/main/java/view/Main.java           |    8 +-
+ 4 files changed, 917 insertions(+), 1073 deletions(-)
+
+commit 6a83444949cc3f8a39a10b0e8f900ca93b0e9605
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 16:23:49 2018 -0500
+
+    Some corrections for class structures
+
+ src/main/java/clientserver/AddCritterBundle.java |  35 ----
+ src/main/java/clientserver/CritterInfo.java      |  10 +-
+ src/main/java/clientserver/CritterInfoFull.java  |   9 +-
+ src/main/java/clientserver/CritterInfoPart.java  |   7 +-
+ src/main/java/clientserver/HexBundle.java        |  52 -----
+ src/main/java/clientserver/ServerWorld.java      | 231 -----------------------
+ src/main/java/view/ClientGUI.java                |  11 +-
+ src/main/java/view/Controller.java               |   1 -
+ 8 files changed, 18 insertions(+), 338 deletions(-)
+
+commit 89eeaeeff4d25645d576abbfef123147cad1d7ef
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 15:50:00 2018 -0500
+
+    Finish client gui simulation
+
+ .../java/clientserver/ClientRequestHandler.java    |   2 +-
+ src/main/java/clientserver/WorldInfoFull.java      |   2 +-
+ src/main/java/view/ClientGUI.java                  | 501 ++++++++++-----------
+ 3 files changed, 242 insertions(+), 263 deletions(-)
+
+commit 1293c0bb95d0269045c8488e4489414bc409276e
+Merge: c1f4a51 ee8f55d
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 15:01:46 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit c1f4a51d5f8725a40a58e354eda13e21de529092
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 15:01:44 2018 -0500
+
+    update the checking cases in the main with local
+
+ src/main/java/main/Main.java                  | 58 +++++++++++++++++++++++++--
+ src/test/java/ClientAndServer/ClientTest.java | 27 +++++++++----
+ 2 files changed, 73 insertions(+), 12 deletions(-)
+
+commit ee8f55df0190581b3d3f3622846e967c0b649301
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 14:23:47 2018 -0500
+
+    Create client GUI get critter info
+
+ src/main/java/view/ClientGUI.java | 62 ++++++++++++++++++++++++++++-----------
+ src/main/java/view/Main.java      |  2 ++
+ 2 files changed, 47 insertions(+), 17 deletions(-)
+
+commit 264ffb016a6cf2efab26e4e11d03fcaa3bf30731
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 13:54:10 2018 -0500
+
+    Fix realtime step
+    
+    can start working on the simulation with the same idea now
+
+ src/main/java/model/World.java    | 2 +-
+ src/main/java/view/ClientGUI.java | 4 +++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+commit 6b090040b7cc6b7a22a85ed02d60f84183a9f0fc
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 13:43:51 2018 -0500
+
+    Update ClientGUI.java
+
+ src/main/java/view/ClientGUI.java | 102 +++++++++++++++++++++++++++++++++++---
+ 1 file changed, 96 insertions(+), 6 deletions(-)
+
+commit 93a2cb6c6cfdf493ec1bdabbf85be18e0b2a9d76
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Wed Dec 5 13:24:17 2018 -0500
+
+    start of overview
+
+ src/Overview.txt | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 46fd790087c696a279f5c44dc0a50c15eff0b85d
+Merge: bbd7a4e ee15e76
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 12:49:25 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit bbd7a4e52c2ac569579410f9decafe0b1a0e2928
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 12:49:23 2018 -0500
+
+    Update GUI simulation (incomplete)
+
+ src/main/java/view/ClientGUI.java | 23 ++++++++++++++++++-----
+ src/main/java/view/Main.java      |  4 ++--
+ 2 files changed, 20 insertions(+), 7 deletions(-)
+
+commit ee15e768c0793136b6fb07563f31486b43d05019
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 12:38:32 2018 -0500
+
+    try to test
+
+ src/main/java/clientserver/ClientRequestHandler.java | 1 +
+ src/test/java/ClientAndServer/ClientTest.java        | 6 +++---
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+commit 21ad3e5b8e2f66eb641a093ddaf93c3e2c79fbe0
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 12:29:55 2018 -0500
+
+    change arraylist to array
+
+ .../java/clientserver/ClientRequestHandler.java    | 10 +++++----
+ src/main/java/clientserver/CritterBundle.java      |  6 +++---
+ src/main/java/clientserver/Server.java             |  7 +++++++
+ src/main/java/main/Main.java                       |  4 ++--
+ src/main/java/model/World.java                     | 24 ++++++++++++++--------
+ src/main/java/view/ClientGUI.java                  |  8 ++++++--
+ src/test/java/ClientAndServer/ClientTest.java      | 17 +++++++--------
+ 7 files changed, 49 insertions(+), 27 deletions(-)
+
+commit c411a0451b4a962ab85b5157a4df7e2cc923177c
+Merge: a55c125 105e939
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 11:41:10 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit a55c125075f9e03f9fe57103f9e00d1a63c23501
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 11:38:50 2018 -0500
+
+    test case
+
+ src/test/java/ClientAndServer/ClientTest.java | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+commit 105e93931631ff8e54ffa0b7de96c324899d5c80
+Merge: 38cae73 4afbd2f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 11:25:55 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+    Merge
+
+commit 38cae73ed57a6a514fb65470ee8abc026df463ee
+Merge: 9c33e9b fc80701
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 11:25:50 2018 -0500
+
+    Merge
+
+commit 4afbd2f8a628b80c8b88fad0f249142405bd5eee
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 11:24:39 2018 -0500
+
+    fix test case
+
+ src/main/java/clientserver/ClientRequestHandler.java | 2 +-
+ src/test/java/ClientAndServer/ClientTest.java        | 5 +++--
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+commit 9c33e9b63b575bf950f52363309950f45c1240a2
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 11:22:27 2018 -0500
+
+    Update
+
+ .../java/clientserver/ClientRequestHandler.java    |  22 +-
+ src/main/java/view/ClientGUI.java                  | 546 ++++++++++-----------
+ src/main/java/view/Main.java                       |   4 +-
+ src/test/java/ClientAndServer/ClientTest.java      |   4 +-
+ 4 files changed, 283 insertions(+), 293 deletions(-)
+
+commit fc80701f013d3c771c7d3dc89290d02a9b068e2b
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 11:06:11 2018 -0500
+
+    java doc for client handler
+
+ .../java/clientserver/ClientRequestHandler.java    | 98 ++++++++++++++++++----
+ 1 file changed, 80 insertions(+), 18 deletions(-)
+
+commit 2b018ec83535b781248df21ec1c4e6232864f94a
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 08:44:29 2018 -0500
+
+    Correct version counts
+
+ src/main/java/model/World.java        | 18 +++++++++++-------
+ src/test/resources/examples/world.txt |  9 ++++++---
+ 2 files changed, 17 insertions(+), 10 deletions(-)
+
+commit 00c063c75d9b32b72c0ad51da2dd6f3f5d29068d
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 05:25:59 2018 -0500
+
+    Update Interpreter.java
+
+ src/main/java/interpret/Interpreter.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f760faf499c288773afad834a1fdcb1e1dd2897c
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 05:19:52 2018 -0500
+
+    Revert "Revert "fix mem""
+    
+    This reverts commit 478283deff1447faf3db1ca8b75767908d62791c.
+
+ src/main/java/ast/AbstractNode.java |  2 +-
+ src/main/java/parse/ParserImpl.java | 16 ++++++++--------
+ 2 files changed, 9 insertions(+), 9 deletions(-)
+
+commit 478283deff1447faf3db1ca8b75767908d62791c
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 05:13:46 2018 -0500
+
+    Revert "fix mem"
+    
+    This reverts commit eb22dfa1a3692837316a22c5315f7b88c92068f2.
+
+ src/main/java/ast/AbstractNode.java |  2 +-
+ src/main/java/parse/ParserImpl.java | 16 ++++++++--------
+ 2 files changed, 9 insertions(+), 9 deletions(-)
+
+commit 54ee833f7a8017152c17917d70f6a45f70f3d4fe
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 05:05:13 2018 -0500
+
+    Upload buggy code
+    
+    I am desperate
+
+ .../java/clientserver/ClientRequestHandler.java    | 26 +++++-----
+ src/main/java/clientserver/Server.java             |  3 ++
+ src/main/java/model/Critter.java                   |  7 ++-
+ src/main/java/model/Location.java                  |  5 +-
+ src/main/java/model/World.java                     | 21 ++++----
+ src/main/java/view/ClientGUI.java                  | 58 ++++++++++------------
+ src/test/java/ClientAndServer/ClientTest.java      |  5 +-
+ 7 files changed, 67 insertions(+), 58 deletions(-)
+
+commit 7904e29235b82d7834343c954791766c38c87207
+Merge: 4acfb2c 102ea27
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Wed Dec 5 02:35:37 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 4acfb2c2998db08bd39e515d5c308e395d057516
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Wed Dec 5 02:35:34 2018 -0500
+
+    More smell testing
+
+ src/main/java/model/Critter.java           |  4 +-
+ src/main/java/model/ShortestPath.java      |  8 +++
+ src/test/java/Smell/SmellTest.java         | 80 ++++++++++++++++++++++++++++++
+ src/test/resources/examples/Smell-test.txt |  2 +-
+ 4 files changed, 91 insertions(+), 3 deletions(-)
+
+commit 102ea27b2b0a63fd25395f834050876438002538
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 02:01:57 2018 -0500
+
+    Update add criters in gui
+
+ .../java/clientserver/ClientRequestHandler.java    |  4 +-
+ src/main/java/clientserver/PositionBundle.java     |  2 +-
+ src/main/java/clientserver/Server.java             |  6 ---
+ src/main/java/main/Main.java                       |  5 ++-
+ src/main/java/view/ClientGUI.java                  | 52 +++++++++++-----------
+ 5 files changed, 33 insertions(+), 36 deletions(-)
+
+commit eb22dfa1a3692837316a22c5315f7b88c92068f2
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 01:50:00 2018 -0500
+
+    fix mem
+
+ src/main/java/ast/AbstractNode.java |  2 +-
+ src/main/java/parse/ParserImpl.java | 16 ++++++++--------
+ 2 files changed, 9 insertions(+), 9 deletions(-)
+
+commit bbc96c2f20d6a61eaeebbd43fe59cdbfb90f5b71
+Merge: 41d1b76 6cf6201
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 01:40:56 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 41d1b76efa946ee558c4b500951976d53a26b2d3
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 01:40:54 2018 -0500
+
+    More bugs
+
+ .../java/clientserver/ClientRequestHandler.java    | 25 ++++++++++++--------
+ src/main/java/clientserver/Server.java             | 12 ++++++++++
+ src/main/java/view/ClientGUI.java                  | 27 ++++++++--------------
+ 3 files changed, 36 insertions(+), 28 deletions(-)
+
+commit 6cf6201ba07589ca4882e1ec69fb35d93c023123
+Merge: bb29bd9 3dd313e
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 01:01:50 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit bb29bd9ffef8870156ede383d56166f03d03b724
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 01:01:48 2018 -0500
+
+    more test
+
+ src/test/java/ClientAndServer/ClientTest.java | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 3dd313e13db1fa66227e69997713555b5760917c
+Merge: 85bd4ff a816021
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 00:29:15 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 85bd4ff6c37764fbfc077ec3de5a707b67f5ff9d
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 00:29:02 2018 -0500
+
+    Fix client randomly add n critters
+
+ src/main/java/clientserver/ClientRequestHandler.java | 18 ++++++++++--------
+ src/main/java/clientserver/Server.java               |  1 +
+ 2 files changed, 11 insertions(+), 8 deletions(-)
+
+commit a8160216c8296256c3a405cb2c902cd6a318c06e
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 00:21:51 2018 -0500
+
+    delete get input stream
+
+ src/main/java/clientserver/ClientRequestHandler.java | 9 +--------
+ src/test/java/ClientAndServer/ClientTest.java        | 2 +-
+ 2 files changed, 2 insertions(+), 9 deletions(-)
+
+commit 5af1d237d60a29c59776f8aa01872cc0fc7f3139
+Merge: 0f1fd57 5b0573f
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 00:15:34 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 0f1fd5771ec02b1a8f19f20c77769cbf403dc765
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Dec 5 00:15:32 2018 -0500
+
+    test case
+
+ src/main/java/clientserver/ClientRequestHandler.java | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 5b0573fab788df6ed3d84bd9f2b297f112ad2f08
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Dec 5 00:15:05 2018 -0500
+
+    Update add critter (with bugs)
+
+ .../java/clientserver/ClientRequestHandler.java    |  4 +-
+ src/main/java/clientserver/CritterBundle.java      |  5 +--
+ src/main/java/clientserver/Server.java             |  1 +
+ src/main/java/view/ClientGUI.java                  | 52 +++++++++++-----------
+ 4 files changed, 32 insertions(+), 30 deletions(-)
+
+commit 08ffb3a2fa8feee4c2f6e437b451cb350ca6ea85
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 23:54:52 2018 -0500
+
+    Add critter (with bugs)
+
+ src/main/java/clientserver/AddCritterBundle.java   |   8 +-
+ .../java/clientserver/ClientRequestHandler.java    |   2 +-
+ src/main/java/model/World.java                     |   4 +-
+ src/main/java/view/ClientGUI.java                  | 135 +++++++++------------
+ 4 files changed, 67 insertions(+), 82 deletions(-)
+
+commit 14e26f1cbc75cf3716f74a8a2b7261cf39b98b99
+Merge: 7acab22 e56fa80
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 23:27:36 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 7acab22cda91486e976536ceb07fee005b5741e2
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 23:27:34 2018 -0500
+
+    merge
+
+ src/main/java/clientserver/ServerWorld.java | 462 ++++++++++++++--------------
+ 1 file changed, 231 insertions(+), 231 deletions(-)
+
+commit 85c3616bef793511b2329f86776b8c1e42a3aa99
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 23:26:34 2018 -0500
+
+    blanck space
+
+ src/main/java/clientserver/ServerWorld.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e56fa8013f559eecca19ca0f5c05a643a0aa5bf2
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 22:49:34 2018 -0500
+
+    Fix draw world
+
+ .../java/clientserver/ClientRequestHandler.java    |  14 +-
+ src/main/java/clientserver/HexInfo.java            |   9 +-
+ src/main/java/clientserver/Server.java             |   3 +-
+ src/main/java/clientserver/ServerWorld.java        | 462 ++++++++++-----------
+ src/main/java/model/World.java                     |   2 +-
+ 5 files changed, 241 insertions(+), 249 deletions(-)
+
+commit 6a4f5fa1fee88b01ee4aa7de4cc480419b3a859d
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 21:52:55 2018 -0500
+
+    more
+
+ src/main/java/clientserver/ServerWorld.java | 19 +------------------
+ 1 file changed, 1 insertion(+), 18 deletions(-)
+
+commit 58135a7467d34280c03ec861501bf6ab167db6f9
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 21:51:07 2018 -0500
+
+    update server world
+
+ src/main/java/clientserver/ServerWorld.java | 196 ++++++++++++++++++++++++++++
+ 1 file changed, 196 insertions(+)
+
+commit 49845746eae5a2166a41fe60bfe86c0490a12b15
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 21:08:21 2018 -0500
+
+    server world
+
+ src/main/java/clientserver/ServerWorld.java | 52 +++++++++++++++++++++++++++++
+ 1 file changed, 52 insertions(+)
+
+commit bd1156f25c4e83b361518e3cc8ddecc7c18dcf0c
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 20:34:43 2018 -0500
+
+    test case
+
+ .../java/clientserver/ClientRequestHandler.java    |  2 +-
+ src/main/java/clientserver/Server.java             |  2 +-
+ src/main/java/main/Main.java                       | 92 ++++++++++++++++++++--
+ src/test/java/ClientAndServer/ClientTest.java      | 15 ++--
+ 4 files changed, 96 insertions(+), 15 deletions(-)
+
+commit 06169aac6349290bda48e5cabc2a38c2bbaeeeaa
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 19:28:13 2018 -0500
+
+    Create new world in client gui
+
+ .../java/clientserver/ClientRequestHandler.java    | 33 +++++++++++++++++
+ src/main/java/clientserver/Server.java             | 11 ++++--
+ src/main/java/view/ClientGUI.java                  | 43 +++++++++-------------
+ 3 files changed, 58 insertions(+), 29 deletions(-)
+
+commit d977487f1aa9b0b4e62943279c5ea6abf478cadb
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 19:04:35 2018 -0500
+
+    Create draw world and load world in new GUI
+
+ .../java/clientserver/ClientRequestHandler.java    |   1 +
+ src/main/java/clientserver/HexInfo.java            |  12 +-
+ src/main/java/clientserver/HexInfoCritterFull.java |   9 +-
+ src/main/java/clientserver/HexInfoCritterPart.java |   7 +-
+ src/main/java/clientserver/HexInfoFood.java        |   5 +-
+ src/main/java/clientserver/HexInfoNullOrRock.java  |   4 +-
+ src/main/java/clientserver/Server.java             |  76 +-
+ src/main/java/main/Main.java                       |   4 +-
+ src/main/java/model/Critter.java                   |  18 +
+ src/main/java/view/ClientGUI.java                  | 888 +++++++++++++++++++++
+ src/main/java/view/Main.java                       |  52 +-
+ src/main/java/view/scene.fxml                      |   2 +-
+ 12 files changed, 991 insertions(+), 87 deletions(-)
+
+commit 661a18094cce7bbe40ee554a0488eb5534457296
+Merge: 908f783 31e283b
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 18:18:23 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 908f7832a4907499b7ca459a609504955c96c090
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 18:18:21 2018 -0500
+
+    Update ClientRequestHandler.java
+
+ src/main/java/clientserver/ClientRequestHandler.java | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 31e283b66cba2828bc250179e73341cd0faecbd7
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 18:15:17 2018 -0500
+
+    fixed more bugs on client handler
+
+ .../java/clientserver/ClientRequestHandler.java    | 44 +++++++++-------------
+ src/test/java/ClientAndServer/ClientTest.java      |  9 +++--
+ 2 files changed, 23 insertions(+), 30 deletions(-)
+
+commit c4c4f22fcbb1f9ecb3d36226549a716ebba9726e
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 17:59:34 2018 -0500
+
+    try to fix bugs
+
+ .../java/clientserver/ClientRequestHandler.java    |  3 +-
+ src/test/java/ClientAndServer/ClientTest.java      | 90 ++++++++++++++++++++--
+ 2 files changed, 86 insertions(+), 7 deletions(-)
+
+commit 82cce6e79fcaa5e39b7f0bcad7c570026d763e07
+Merge: 711391f bf8c8e4
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 17:06:15 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 711391f7e13c8cc564d0d4f8b0c47a665268afad
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 17:06:13 2018 -0500
+
+    fix bugs and test cases
+
+ .../java/clientserver/ClientRequestHandler.java    | 56 +++++++++---------
+ src/main/java/main/Main.java                       | 11 +++-
+ src/main/java/view/TemptController.java            | 50 ----------------
+ src/test/java/ClientAndServer/ClientTest.java      | 68 +++++++++++++++++-----
+ 4 files changed, 90 insertions(+), 95 deletions(-)
+
+commit bf8c8e43a0dca240396ed9329d4df5e02cc9d588
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 04:33:33 2018 -0500
+
+    Finish server (hopefully)
+    
+    More bugs than I thought...
+
+ src/main/java/clientserver/HexInfoFood.java |   2 +-
+ src/main/java/clientserver/RunBundle.java   |   4 +-
+ src/main/java/clientserver/Server.java      | 215 +++++++++++++++++++---------
+ src/main/java/model/World.java              |  24 ++--
+ 4 files changed, 160 insertions(+), 85 deletions(-)
+
+commit 42b685a1521cbd355ee3a06c6e4d15b543f74ece
+Merge: e111261 68ddf4f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 01:46:00 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit e11126166b04287ade84cb997028721c53ebc60f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 01:45:55 2018 -0500
+
+    Update run post
+
+ src/main/java/clientserver/Server.java | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
+
+commit 68ddf4f9e9f16f3e419672abcaba97fd3d57d831
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 01:45:09 2018 -0500
+
+    pieces
+
+ .../java/clientserver/ClientRequestHandler.java    | 11 +++--
+ src/main/java/clientserver/LoginBundle.java        |  1 +
+ src/main/java/view/Main.java                       | 12 ++++++
+ src/main/java/view/TemptController.java            | 50 ++++++++++++++++++++++
+ 4 files changed, 70 insertions(+), 4 deletions(-)
+
+commit 5bdd55b1583f186ea24eebcfd6c0e8c508e99bf5
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Dec 4 00:58:47 2018 -0500
+
+    javadoc
+
+ src/main/java/model/ShortestPath.java | 41 ++++++++++++++++++-----------------
+ src/main/java/model/Vex.java          |  4 ++++
+ 2 files changed, 25 insertions(+), 20 deletions(-)
+
+commit 4410910477e5504c3789acaab1fe4ed4ec905228
+Merge: c15a60f fa23656
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 00:43:27 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit c15a60febdf14204f9a6d679261a91f361bab8f0
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 00:43:25 2018 -0500
+
+    Update example-critter.txt
+
+ src/test/resources/examples/example-critter.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 54431658c318b7e8cb75be4e77a50a382ff89b75
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Dec 4 00:43:08 2018 -0500
+
+    Create get world section
+
+ src/main/java/clientserver/Server.java          | 82 +++++++++++++++----------
+ src/main/java/clientserver/WorldStepBundle.java |  4 ++
+ src/main/java/model/World.java                  |  6 +-
+ src/main/java/view/Controller.java              |  2 +
+ 4 files changed, 58 insertions(+), 36 deletions(-)
+
+commit fa23656c5e3db1f406a98467a6581ebceb034b3c
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 00:32:55 2018 -0500
+
+    Delete Test.java
+
+ src/main/java/Test.java | 5 -----
+ 1 file changed, 5 deletions(-)
+
+commit 0f8b8fa8b8d27effa84e000688d8fae5b88b2781
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Dec 4 00:30:57 2018 -0500
+
+    Start Client Test and fix WorldInfoFull
+
+ .../java/clientserver/ClientRequestHandler.java    | 116 ++++++++++-----------
+ src/main/java/clientserver/WorldStateBundle.java   |  16 ---
+ src/test/java/ClientAndServer/ClientTest.java      |  28 +++++
+ 3 files changed, 86 insertions(+), 74 deletions(-)
+
+commit d9d79226f705977811181e54d59fee282344ec41
+Merge: a2e5cca 63a1023
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Dec 3 23:34:55 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit a2e5ccade31f6bc8116337572d5f47d32ba50778
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Dec 3 23:34:53 2018 -0500
+
+    update
+
+ .../java/clientserver/ClientRequestHandler.java    | 107 ++++++++++++++++++++-
+ src/main/java/main/Main.java                       |   2 +-
+ 2 files changed, 103 insertions(+), 6 deletions(-)
+
+commit 63a1023e7e5e4b9d8ce6b2787c40857d3af03ebf
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Dec 3 23:24:37 2018 -0500
+
+    relative positioning
+    
+    added....?
+
+ src/main/java/model/ShortestPath.java      |  3 ++-
+ src/test/resources/examples/Smell-test.txt | 29 +++++++++++++++++++++++++++++
+ 2 files changed, 31 insertions(+), 1 deletion(-)
+
+commit f3f53ae39f39825efbabad81af7ec2789900e8be
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Dec 3 22:39:19 2018 -0500
+
+    smell working
+    
+    hopefully
+
+ src/main/java/model/ShortestPath.java           | 70 +++++++++++++++++++++++--
+ src/main/java/model/Vex.java                    |  4 ++
+ src/test/resources/examples/example-critter.txt |  2 +-
+ src/test/resources/examples/world.txt           |  8 +--
+ 4 files changed, 73 insertions(+), 11 deletions(-)
+
+commit 994ae59e42800bb44b83403f745fa636f98447ab
+Merge: 109ca8b 5e4554c
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Dec 3 21:15:07 2018 -0500
+
+    Merge
+
+commit 109ca8b327d4c1f1020df45defe0ae879e7359a5
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Dec 3 21:11:26 2018 -0500
+
+    Update world.txt
+    
+    Update for merge. Pay attention to the paths of your local world files.
+
+ src/test/resources/examples/world.txt | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit 9d884b13d63f89c71849416c872034df6afce7c3
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Dec 3 21:09:34 2018 -0500
+
+    Fix bugs in world versions
+
+ src/main/java/clientserver/Server.java | 6 ++++--
+ src/main/java/model/World.java         | 8 +++++++-
+ 2 files changed, 11 insertions(+), 3 deletions(-)
+
+commit 5e4554c97e0de607a11c22d724ac6bb2f0c0cd1f
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Dec 3 20:44:19 2018 -0500
+
+     More debugging
+    
+    Smell works now.... sorta
+
+ src/main/java/model/Critter.java                | 3 ++-
+ src/main/java/model/ShortestPath.java           | 4 ++--
+ src/test/resources/examples/example-critter.txt | 2 +-
+ src/test/resources/examples/world.txt           | 4 ++--
+ 4 files changed, 7 insertions(+), 6 deletions(-)
+
+commit 761f3781ac0193e96afbc41c6fba698840ab167d
+Merge: ab59d97 406c9f6
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Dec 3 17:07:14 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit ab59d97e0e22ddeb14a852fb500c236e33bf3dd8
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Dec 3 17:06:30 2018 -0500
+
+    debugging
+    
+    critter can move now.
+
+ src/main/java/model/Critter.java      |  2 +-
+ src/main/java/model/ShortestPath.java | 55 ++++++++++++++++++++---------------
+ src/main/java/model/Vex.java          |  8 +++--
+ src/main/java/model/World.java        |  2 ++
+ 4 files changed, 39 insertions(+), 28 deletions(-)
+
+commit 406c9f630c090f531bc6ef3c3bdc547ac7805f5b
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Dec 3 01:10:35 2018 -0500
+
+    update
+
+ src/main/java/view/Controller.java | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
+
+commit c787a535fccf7c0c7aad14906646ca85aadbade7
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Dec 3 00:25:39 2018 -0500
+
+    update
+
+ .../java/clientserver/ClientRequestHandler.java    | 256 +++++++++++----------
+ src/main/java/clientserver/RateBundle.java         |  10 +
+ 2 files changed, 141 insertions(+), 125 deletions(-)
+
+commit 095118cdaaf7ab415e5caa81683e6fa0db74629b
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Dec 2 23:20:03 2018 -0500
+
+    fixed
+
+ .../java/clientserver/ClientRequestHandler.java    | 154 +++++++++++----------
+ src/main/java/clientserver/WorldStateBundle.java   |   1 +
+ src/main/java/main/Main.java                       |   3 +-
+ src/main/java/view/Controller.java                 |   4 +-
+ 4 files changed, 85 insertions(+), 77 deletions(-)
+
+commit 8326e3cc157d13c63195f1ee6276c64755e2d476
+Merge: 6946758 928461e
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Dec 2 11:37:26 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 6946758ea6be0765dc66034c878ded07a8158c48
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Dec 2 11:37:17 2018 -0500
+
+    updata
+
+ src/main/java/clientserver/ClientRequestHandler.java | 9 ++++++---
+ src/main/java/main/Main.java                         | 2 +-
+ src/main/java/model/Critter.java                     | 2 +-
+ 3 files changed, 8 insertions(+), 5 deletions(-)
+
+commit 928461e87f9abcf5c1c89d4179d3d54b1e172603
+Merge: e663a65 46d34f0
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Dec 2 04:26:08 2018 -0500
+
+    Merge conflict
+
+commit e663a65a2c2ff98b06563935f81be8fa7be0c601
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Dec 2 04:14:15 2018 -0500
+
+    Fix post critters
+
+ src/main/java/clientserver/CritterBundle.java | 11 +----------
+ src/main/java/clientserver/Server.java        | 14 +++++++++++++-
+ src/main/java/model/Critter.java              |  8 ++++----
+ 3 files changed, 18 insertions(+), 15 deletions(-)
+
+commit de2caa9a0758665021f65a2b43245904f68635a7
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Dec 2 04:13:57 2018 -0500
+
+    Fix setCritter and addCritterLoc
+
+ src/main/java/model/Hex.java       | 16 ++++++++--------
+ src/main/java/model/Location.java  | 11 +++++++++++
+ src/main/java/model/World.java     | 25 +++++++++++++++++++++++--
+ src/test/resources/files/test.json | 19 +++++++++++++++++++
+ 4 files changed, 61 insertions(+), 10 deletions(-)
+
+commit 46d34f015ac6c88856f08428ce694dadbd6657e3
+Merge: c77dd6f f94b992
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Dec 1 23:18:48 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit c77dd6f5a700f5394c2f18a9bee4c87583663f2c
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Dec 1 23:18:09 2018 -0500
+
+    Revert "making sure world can be seen in smell"
+    
+    This reverts commit d8b48420bf0b0355d54b56b008878bbec92008fd.
+
+ src/main/java/model/Critter.java      |  1 +
+ src/main/java/model/ShortestPath.java |  7 +++----
+ src/main/java/model/World.java        |  1 -
+ src/test/SmellTest                    | 29 -----------------------------
+ 4 files changed, 4 insertions(+), 34 deletions(-)
+
+commit 3353829664ee1a8048cb20ae5386eddc020d3e60
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Dec 1 23:18:05 2018 -0500
+
+    Revert "Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world"
+    
+    This reverts commit 4cef6ecd605ef57b98271374524eb479133a0b0f, reversing
+    changes made to d8b48420bf0b0355d54b56b008878bbec92008fd.
+
+ .../java/clientserver/ClientRequestHandler.java    |  8 +--
+ src/main/java/clientserver/CritterInfoFull.java    | 12 ++--
+ src/main/java/clientserver/HexInfoCritterFull.java | 14 ++--
+ src/main/java/clientserver/HexInfoCritterPart.java | 10 +--
+ src/main/java/clientserver/HexInfoFood.java        |  6 +-
+ src/main/java/clientserver/HexInfoNullOrRock.java  |  4 +-
+ src/main/java/model/Critter.java                   |  8 ---
+ src/main/java/model/World.java                     | 84 +++++++++-------------
+ 8 files changed, 60 insertions(+), 86 deletions(-)
+
+commit d2a5d635701755e2389bf578d77bb58e04fbbd5d
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Dec 1 23:18:01 2018 -0500
+
+    Revert "help"
+    
+    This reverts commit 13d1fbca7921969fb8267d1cde12f6464aec5444.
+
+ src/main/java/interpret/Interpreter.java        |  2 --
+ src/main/java/model/Critter.java                |  1 -
+ src/main/java/model/World.java                  |  1 -
+ src/test/SmellTest                              | 29 +++++++++++++++++++++++
+ src/test/SmellTest.txt                          | 31 -------------------------
+ src/test/resources/examples/example-critter.txt |  2 +-
+ 6 files changed, 30 insertions(+), 36 deletions(-)
+
+commit f94b99258cdae235e89761e830e6872025ac0b42
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Dec 1 23:11:12 2018 -0500
+
+    update
+
+ src/main/java/model/Critter.java      |  1 -
+ src/main/java/model/ShortestPath.java |  7 +++----
+ src/main/java/model/World.java        |  1 +
+ src/test/SmellTest                    | 29 -----------------------------
+ 4 files changed, 4 insertions(+), 34 deletions(-)
+
+commit 00245747ee7e9411e74d520b9470c669863e7d07
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Dec 1 23:00:21 2018 -0500
+
+    update
+
+ src/main/java/interpret/Interpreter.java |  2 --
+ src/main/java/model/World.java           |  1 +
+ src/test/SmellTest                       | 29 +++++++++++++++++++++++++++++
+ src/test/SmellTest.txt                   | 31 -------------------------------
+ 4 files changed, 30 insertions(+), 33 deletions(-)
+
+commit e688aceb1e4cb402804208b855f0f46e1c5084c3
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Dec 1 22:57:58 2018 -0500
+
+    update
+
+ src/main/java/model/Critter.java                | 4 ++--
+ src/main/java/model/World.java                  | 2 +-
+ src/test/resources/examples/example-critter.txt | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 727cebd25829a83acdbf59bfb5e9d2bb60cc76bc
+Merge: ea195a5 13d1fbc
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Dec 1 22:31:59 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit ea195a5d85b506131c835c3c31e39ddd851488cc
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Dec 1 22:31:57 2018 -0500
+
+    update
+
+ src/test/resources/examples/example-critter.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 13d1fbca7921969fb8267d1cde12f6464aec5444
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Dec 1 22:31:27 2018 -0500
+
+    help
+
+ src/main/java/interpret/Interpreter.java        |  2 ++
+ src/main/java/model/Critter.java                |  1 +
+ src/main/java/model/World.java                  |  1 +
+ src/test/SmellTest                              | 29 -----------------------
+ src/test/SmellTest.txt                          | 31 +++++++++++++++++++++++++
+ src/test/resources/examples/example-critter.txt |  2 +-
+ 6 files changed, 36 insertions(+), 30 deletions(-)
+
+commit 4cef6ecd605ef57b98271374524eb479133a0b0f
+Merge: d8b4842 4bf7203
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Dec 1 21:48:50 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit d8b48420bf0b0355d54b56b008878bbec92008fd
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Dec 1 21:48:25 2018 -0500
+
+    making sure world can be seen in smell
+
+ src/main/java/model/Critter.java      |  1 -
+ src/main/java/model/ShortestPath.java |  7 ++++---
+ src/main/java/model/World.java        |  1 +
+ src/test/SmellTest                    | 29 +++++++++++++++++++++++++++++
+ 4 files changed, 34 insertions(+), 4 deletions(-)
+
+commit 4bf72031f26a6112f45ce35c31906eef48a35d12
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Dec 1 21:38:58 2018 -0500
+
+    update
+
+ .../java/clientserver/ClientRequestHandler.java    |  8 +--
+ src/main/java/clientserver/CritterInfoFull.java    | 12 ++--
+ src/main/java/clientserver/HexInfoCritterFull.java | 14 ++--
+ src/main/java/clientserver/HexInfoCritterPart.java | 10 +--
+ src/main/java/clientserver/HexInfoFood.java        |  6 +-
+ src/main/java/clientserver/HexInfoNullOrRock.java  |  4 +-
+ src/main/java/model/Critter.java                   |  8 +++
+ src/main/java/model/World.java                     | 84 +++++++++++++---------
+ 8 files changed, 86 insertions(+), 60 deletions(-)
+
+commit e2c4e2229c58205361ca5d6aa39c2114d4180369
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Dec 1 18:51:04 2018 -0500
+
+    Create get world
+
+ src/main/java/clientserver/Server.java | 63 ++++++++++++++++++++++++++++------
+ 1 file changed, 53 insertions(+), 10 deletions(-)
+
+commit abb4d6d2e02078c3fd21d8dc0d501e96db49d779
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Dec 1 18:50:43 2018 -0500
+
+    Create helper classes for getting world infomation
+
+ src/main/java/clientserver/CritterBundle.java      |  6 ++--
+ src/main/java/clientserver/HexBundle.java          |  6 ++--
+ src/main/java/clientserver/HexInfo.java            |  4 +++
+ src/main/java/clientserver/HexInfoCritterPart.java | 21 +++++++++++
+ src/main/java/clientserver/HexInfoFood.java        | 14 ++++++++
+ src/main/java/clientserver/HexInfoNullOrRock.java  | 12 +++++++
+ src/main/java/clientserver/WorldInfoFull.java      | 41 ++++++++++++++++++++++
+ 7 files changed, 96 insertions(+), 8 deletions(-)
+
+commit c6b6c7e2ffbca763b61fc6a80ed87d8b1298c6d2
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Dec 1 18:49:46 2018 -0500
+
+    Create comparator for critter and hex
+
+ src/main/java/model/Critter.java | 31 ++++++++++++++++++---------
+ src/main/java/model/Hex.java     | 46 +++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 66 insertions(+), 11 deletions(-)
+
+commit d972e867d39c24dcd92bad7c4ea91727cc0939d9
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Dec 1 18:49:08 2018 -0500
+
+    Create world version pool and clone
+
+ src/main/java/clientserver/HexInfoCritterFull.java | 25 ++++++++++++
+ src/main/java/model/World.java                     | 45 +++++++++++++++++++++-
+ 2 files changed, 68 insertions(+), 2 deletions(-)
+
+commit 28d6dbfe88871266c94ca8450df2a1b8dece0eb4
+Merge: 11e1b46 924c681
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Dec 1 02:15:51 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 11e1b46e15964ddaad108ac819284db995c6fd88
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Dec 1 01:24:56 2018 -0500
+
+    update
+
+ .../java/clientserver/ClientRequestHandler.java    | 14 +++--
+ src/main/java/main/Main.java                       |  3 +
+ src/main/java/model/World.java                     | 65 +++++++++++-----------
+ src/main/java/view/Controller.java                 | 32 ++---------
+ 4 files changed, 48 insertions(+), 66 deletions(-)
+
+commit 924c68109e934a5f5a40a696562aa96a44d5d512
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Dec 1 01:19:27 2018 -0500
+
+    Update server
+    
+    Implement all the features except for the world versions. The communication to the GUI is also required.
+
+ src/main/java/clientserver/PositionBundle.java |   2 -
+ src/main/java/clientserver/Server.java         | 204 ++++++++++++++++++++++++-
+ src/main/java/model/World.java                 |  25 ++-
+ src/main/java/view/Controller.java             |   6 +
+ 4 files changed, 228 insertions(+), 9 deletions(-)
+
+commit f87b1e2b1640ad7565484cc7ae74210dc3c241f5
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Fri Nov 30 02:36:33 2018 -0500
+
+    more
+
+ .../java/clientserver/ClientRequestHandler.java    |  8 ++---
+ src/main/java/clientserver/HexBundle.java          | 28 ++++++++--------
+ src/main/java/model/Critter.java                   | 17 ++++++++--
+ src/main/java/model/World.java                     | 37 ++++++++++++++++++++++
+ src/main/java/view/Controller.java                 | 10 ++++++
+ 5 files changed, 80 insertions(+), 20 deletions(-)
+
+commit 8c70fdc220720676b4eb3de8207eff5ffbaaa1f9
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Thu Nov 29 20:53:56 2018 -0500
+
+    debuggging
+
+ src/main/java/model/ShortestPath.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d1010937967b8a4e28c7964fe880b431323aeb87
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Thu Nov 29 20:36:34 2018 -0500
+
+    added the max smell distance
+
+ src/main/java/model/Constants.java    |  1 +
+ src/main/java/model/ShortestPath.java | 20 +++++++++++---------
+ 2 files changed, 12 insertions(+), 9 deletions(-)
+
+commit 423a812273a0efccf759e7d5cc85bc223f12ba31
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 29 13:39:32 2018 -0500
+
+    client update
+
+ .../java/clientserver/ClientRequestHandler.java    | 76 ++++++++++++++++++++--
+ 1 file changed, 71 insertions(+), 5 deletions(-)
+
+commit e78699732ceb71fcef479bd9a2cc451776b1a925
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 29 13:10:23 2018 -0500
+
+    more get
+
+ .../java/clientserver/ClientRequestHandler.java    | 26 +++++++++++++++++++++-
+ 1 file changed, 25 insertions(+), 1 deletion(-)
+
+commit 05443e862e7aeade3554b633dd026c5e80aaf243
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 29 12:58:00 2018 -0500
+
+    update the GET implement
+
+ .../java/clientserver/ClientRequestHandler.java    | 29 ++++++++++++++++++++++
+ src/main/java/clientserver/CritterListBundle.java  | 15 +++++++++++
+ 2 files changed, 44 insertions(+)
+
+commit b176d5d5c42cabbe6d48aac62f88e23cac2d9bee
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 29 02:19:32 2018 -0500
+
+    some POST update
+
+ src/main/java/clientserver/AddCritterBundle.java   |  31 +++
+ src/main/java/clientserver/Client.java             |  67 -------
+ .../java/clientserver/ClientRequestHandler.java    | 222 +++++++++++++++++++++
+ src/main/java/clientserver/CritterBundle.java      |   3 +
+ src/main/java/clientserver/CritterInfoPart.java    |   1 +
+ src/main/java/clientserver/SessionBundle.java      |   9 +
+ 6 files changed, 266 insertions(+), 67 deletions(-)
+
+commit a81da7082510d59d471dd4a10369bc6c237ad3ee
+Merge: 99e8c85 8a96802
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 29 00:32:08 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 99e8c8594374dbc2de5a506851201a5ee8a1a494
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 29 00:32:06 2018 -0500
+
+    update
+
+ src/main/java/clientserver/Client.java | 34 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
+
+commit 8a9680292dbbb17e843e1e0b65fb5999c4d4eeee
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Thu Nov 29 00:27:40 2018 -0500
+
+    basic Dijkstra's imiplimentation
+    
+    Need a lot more testing and also have to figure out where to get world and cirtter's location.
+
+ src/main/java/Test.java                  |  5 ++
+ src/main/java/interpret/Interpreter.java |  3 +-
+ src/main/java/interpret/State.java       |  2 +-
+ src/main/java/model/Critter.java         |  9 ++--
+ src/main/java/model/ShortestPath.java    | 84 ++++++++++++++++++++++++++------
+ src/main/java/model/Vex.java             |  4 +-
+ 6 files changed, 83 insertions(+), 24 deletions(-)
+
+commit 49c6c5840e2e35a23ca5175cd7f6090fda59e590
+Merge: 8417e17 beb7512
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 27 13:02:54 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 8417e170292655e8f6da3b0a4260976b382a9ab0
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 27 13:02:47 2018 -0500
+
+    Revert "update"
+    
+    This reverts commit 7a4b04a85934957db8b818edd938578682c6e07f.
+
+ src/main/java/clientserver/Client.java   | 18 ------------------
+ src/main/java/clientserver/Server.java   |  2 +-
+ src/main/java/interpret/Interpreter.java |  2 +-
+ 3 files changed, 2 insertions(+), 20 deletions(-)
+
+commit 7a4b04a85934957db8b818edd938578682c6e07f
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 27 13:00:53 2018 -0500
+
+    update
+
+ src/main/java/clientserver/Client.java   | 18 ++++++++++++++++++
+ src/main/java/clientserver/Server.java   |  2 +-
+ src/main/java/interpret/Interpreter.java |  2 +-
+ 3 files changed, 20 insertions(+), 2 deletions(-)
+
+commit beb751219ca4a6925d4bace355c75558bdedd5d3
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 27 12:12:56 2018 -0500
+
+    Create get and post for critters
+
+ src/main/java/clientserver/Server.java | 79 +++++++++++++++++++++++++++++++---
+ src/main/java/model/Critter.java       | 37 +++++++++++++---
+ 2 files changed, 104 insertions(+), 12 deletions(-)
+
+commit e5d5bfe15611ba14f6f3762068c65ea76bc26b16
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 27 12:11:34 2018 -0500
+
+    Update Critter helpers
+
+ src/main/java/clientserver/CritterBundle.java   | 17 +++---
+ src/main/java/clientserver/CritterInfo.java     |  4 ++
+ src/main/java/clientserver/CritterInfoFull.java | 25 +++++++++
+ src/main/java/clientserver/CritterInfoPart.java | 21 ++++++++
+ src/main/java/clientserver/PositionBundle.java  |  6 +--
+ src/main/java/console/Console.java              |  2 +-
+ src/main/java/model/World.java                  | 72 ++++++++++++++++++++++++-
+ src/main/java/view/Main.java                    | 21 --------
+ 8 files changed, 135 insertions(+), 33 deletions(-)
+
+commit a3d0cb851747583e3f9a685498e712ab2643c24f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 27 00:39:14 2018 -0500
+
+    Update World
+    
+    Handle critters with invalid locations
+
+ src/main/java/model/World.java | 16 +++++++++-------
+ 1 file changed, 9 insertions(+), 7 deletions(-)
+
+commit ba9c1589cd26de818a87f272482e10907bc6d6c5
+Merge: 59a3074 1ef4de1
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 27 00:34:18 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 59a3074d42ddd7ad262a31eb969f77433465ce9c
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 27 00:33:58 2018 -0500
+
+    Update login
+
+ src/main/java/view/Main.java | 98 ++++++++++++++++++++++++++++----------------
+ 1 file changed, 62 insertions(+), 36 deletions(-)
+
+commit 1ef4de1c208704d50c4a9d48be05c88a29db1f58
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Nov 27 00:32:10 2018 -0500
+
+    adding Djkistra
+    
+    the hardest part is getting it to work with a hexagonal grid and also direction + turning is creating large problems.
+
+ src/main/java/interpret/Interpreter.java |  3 ++-
+ src/main/java/interpret/State.java       |  2 ++
+ src/main/java/model/Constants.java       |  4 ++++
+ src/main/java/model/ShortestPath.java    | 21 +++++++++++++++------
+ src/main/java/model/Vex.java             | 15 +++++++++++----
+ 5 files changed, 34 insertions(+), 11 deletions(-)
+
+commit 5cb8ada37584797f046f4d06ec8f22a524eb07c0
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 26 23:13:25 2018 -0500
+
+    Crearte Login in GUI
+
+ src/main/java/view/Grid.java  | 131 ------------------------------------------
+ src/main/java/view/Main.java  |  54 ++++++++++++++---
+ src/main/java/view/login.fxml |  33 +++++++++++
+ 3 files changed, 80 insertions(+), 138 deletions(-)
+
+commit 3551b31da41569901b14ae0bca6303c465453017
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 26 22:41:54 2018 -0500
+
+    all bundles
+
+ src/main/java/clientserver/ObjectBundle.java    | 15 +++++++++++++++
+ src/main/java/clientserver/RunBundle.java       |  9 +++++++++
+ src/main/java/clientserver/WorldStepBundle.java |  9 +++++++++
+ 3 files changed, 33 insertions(+)
+
+commit 89bd4407ea8184fc97468fab372f0334c5f337ea
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 26 22:37:24 2018 -0500
+
+    more bundles
+
+ src/main/java/clientserver/CritterBundle.java    | 16 ++++++--
+ src/main/java/clientserver/HexBundle.java        | 52 ++++++++++++++++++++++++
+ src/main/java/clientserver/PositionBundle.java   | 15 +++++++
+ src/main/java/clientserver/WorldBundle.java      | 10 +++++
+ src/main/java/clientserver/WorldStateBundle.java | 15 +++++++
+ 5 files changed, 105 insertions(+), 3 deletions(-)
+
+commit b43c38c2219aa80ba11e9a8d71f3c508cfb705d8
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 26 22:08:51 2018 -0500
+
+    bundles
+
+ src/main/java/clientserver/Client.java        |  4 ++++
+ src/main/java/clientserver/CritterBundle.java | 15 +++++++++++++++
+ src/main/java/clientserver/Login.java         | 11 -----------
+ src/main/java/clientserver/LoginBundle.java   | 11 +++++++++++
+ 4 files changed, 30 insertions(+), 11 deletions(-)
+
+commit d8e418ff90fc3f191ae08a13db93684128bf003a
+Merge: 4c08483 d4d1f36
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Nov 26 21:04:32 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 4c08483be190d5b1b34137e054f2fe3fac7fa6c6
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Nov 26 16:25:03 2018 -0500
+
+    smell added in interpreter
+
+ src/main/java/console/Console.java              |  1 +
+ src/main/java/interpret/Interpreter.java        |  2 +-
+ src/main/main.iml                               | 11 +++++++++++
+ src/test/resources/examples/example-critter.txt |  2 +-
+ src/test/test.iml                               | 24 ++++++++++++++++++++++++
+ 5 files changed, 38 insertions(+), 2 deletions(-)
+
+commit d4d1f365d4f3ee811905ce8782e998fba2089670
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 26 01:52:18 2018 -0500
+
+    build client
+
+ src/main/java/clientserver/Client.java | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+
+commit f049b8e6b26347eb690db5ffbe016cfcef6f5a04
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Nov 25 23:21:05 2018 -0500
+
+    update
+
+ .DS_Store                                 |  Bin 6148 -> 6148 bytes
+ diff.txt                                  | 1866 -----------------------------
+ gradle/.DS_Store                          |  Bin 0 -> 6148 bytes
+ src/main/java/ast/AbstractNode.java       |    1 -
+ src/main/java/console/Console.java        |    7 -
+ src/main/java/interpret/Interpreter.java  |    2 +-
+ src/main/java/main/ParseAndMutateApp.java |    1 -
+ src/main/java/model/Critter.java          |    6 +
+ src/main/java/model/ShortestPath.java     |   25 +
+ src/main/java/model/Vex.java              |    8 +
+ src/test/java/parser/ParserTest.java      |    1 -
+ 11 files changed, 40 insertions(+), 1877 deletions(-)
+
+commit 49f77274fd7372253fe88cb4ec4b519164738ea8
+Merge: 57edc89 9fae53e
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Nov 25 23:19:36 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 57edc89b2fa215b7905d208e2074329e66fc9530
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Nov 25 23:19:33 2018 -0500
+
+    Revert "update"
+    
+    This reverts commit df14175be72cb8736daec596929f6c276525efc6.
+
+ .DS_Store                                 |  Bin 6148 -> 6148 bytes
+ build.gradle                              |   48 +
+ diff.txt                                  | 1866 +++++++++++++++++++++++++++++
+ gradle/.DS_Store                          |  Bin 6148 -> 0 bytes
+ src/main/java/ast/AbstractNode.java       |    1 +
+ src/main/java/console/Console.java        |    7 +
+ src/main/java/interpret/Interpreter.java  |    2 +-
+ src/main/java/main/ParseAndMutateApp.java |    1 +
+ src/main/java/model/Critter.java          |    6 -
+ src/main/java/model/ShortestPath.java     |   25 -
+ src/main/java/model/Vex.java              |    8 -
+ src/test/java/parser/ParserTest.java      |    1 +
+ 12 files changed, 1925 insertions(+), 40 deletions(-)
+
+commit df14175be72cb8736daec596929f6c276525efc6
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Nov 25 23:18:43 2018 -0500
+
+    update
+
+ .DS_Store                                 |  Bin 6148 -> 6148 bytes
+ build.gradle                              |   48 -
+ diff.txt                                  | 1866 -----------------------------
+ gradle/.DS_Store                          |  Bin 0 -> 6148 bytes
+ src/main/java/ast/AbstractNode.java       |    1 -
+ src/main/java/console/Console.java        |    7 -
+ src/main/java/interpret/Interpreter.java  |    2 +-
+ src/main/java/main/ParseAndMutateApp.java |    1 -
+ src/main/java/model/Critter.java          |    6 +
+ src/main/java/model/ShortestPath.java     |   25 +
+ src/main/java/model/Vex.java              |    8 +
+ src/test/java/parser/ParserTest.java      |    1 -
+ 12 files changed, 40 insertions(+), 1925 deletions(-)
+
+commit 9fae53effbd4a69e37ee04cae4a58bc8aa26fcd1
+Author: lxywizard <1183135553@qq.com>
+Date:   Sun Nov 25 22:11:40 2018 -0500
+
+    Create login
+
+ src/main/java/clientserver/Login.java  | 11 +++++++
+ src/main/java/clientserver/Server.java | 60 ++++++++++++++++++++++++++++++++++
+ src/main/java/main/Main.java           | 31 ++++++++++++++++++
+ 3 files changed, 102 insertions(+)
+
+commit 507110708e524ecbc0b9e9e3093f72af83434911
+Author: lxywizard <1183135553@qq.com>
+Date:   Sun Nov 25 22:00:19 2018 -0500
+
+    Set up environment
+
+ .gitignore                          |  2 ++
+ build.gradle                        |  2 ++
+ src/main/java/ast/AbstractNode.java |  6 ++++--
+ src/main/java/model/World.java      |  1 -
+ src/main/java/view/Controller.java  | 35 +++++++++++++----------------------
+ src/main/java/view/Main.java        | 18 ++----------------
+ 6 files changed, 23 insertions(+), 41 deletions(-)
+
+commit f989d01d9d4d910e45fb60c4086148bcd7784e3f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 13 23:51:04 2018 -0500
+
+    Add more descriptions
+
+ src/main/java/view/helpmessage.fxml | 12 ++++++------
+ src/main/java/view/scene.fxml       |  6 +++++-
+ 2 files changed, 11 insertions(+), 7 deletions(-)
+
+commit 95a5c692e7c449bad3bc62342350fe804cbf6f1d
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 13 23:42:23 2018 -0500
+
+    Create compatible mode
+
+ src/main/java/ast/MutationFactory.java | 23 +++++++++
+ src/main/java/ast/MutationInsert.java  | 85 ++++++++++++++++++----------------
+ src/main/java/ast/MutationReplace.java | 18 ++++---
+ src/main/java/ast/Program.java         |  5 ++
+ src/main/java/ast/ProgramImpl.java     | 16 +++++++
+ src/main/java/model/Critter.java       |  2 +-
+ src/main/java/model/World.java         | 65 +++++++++++++++-----------
+ src/main/java/view/Controller.java     | 15 +++---
+ src/main/java/view/scene.fxml          |  1 +
+ 9 files changed, 147 insertions(+), 83 deletions(-)
+
+commit 0f5826c29b766ce39f399438d4f54e37bf19170f
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Nov 13 22:44:34 2018 -0500
+
+    .
+
+ src/main/java/view/Controller.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b981d231df2bdf40260856d2301aa22da02f80d3
+Merge: 2968f6a 2c20541
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Nov 13 22:10:05 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 2968f6a2e3f8f8e29e72366b6592236e3b1d91fc
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Nov 13 22:10:03 2018 -0500
+
+    improper critter syntax error put into a try catch
+    
+    Though it looks like there are more bugs...
+
+ src/main/java/parse/ParserImpl.java | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 2c20541fc9c407f0e169d89556d0d8e96ba66a47
+Merge: 704333d c5947b9
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 13 22:04:04 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 704333dd5d457d417fab537247ba7d2b212b964a
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 13 22:04:02 2018 -0500
+
+    update
+
+ src/main/java/view/Controller.java | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+
+commit c5947b9d6cd3f75d1ca9f52f4f4c61cd224e0943
+Merge: 64c398d 8d9439d
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Nov 13 21:07:59 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 64c398d43522907403b95d074a955d5886f71725
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Nov 13 21:07:57 2018 -0500
+
+    some javadoc
+
+ src/main/java/model/World.java     |  8 +++-
+ src/main/java/view/Controller.java | 76 ++++++++++++++++++++++++++++++++++++++
+ src/main/java/view/scene.fxml      |  4 +-
+ 3 files changed, 85 insertions(+), 3 deletions(-)
+
+commit 8d9439d4ff4516f725719bf61a84ea3c504b5df0
+Merge: 4ab8875 2dcf131
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 13 20:50:18 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 4ab887573ade4d04a317da1130f61988e30c728c
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 13 20:50:15 2018 -0500
+
+    Update numCritters
+
+ src/main/java/model/Critter.java   | 1 -
+ src/main/java/view/Controller.java | 2 ++
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit 2dcf13123e457c3af5eb408db6577201a162ce92
+Merge: c7ffa11 513a4e8
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Nov 13 20:06:52 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit c7ffa11b1b143d99a48681e5ee16a25ac092dfbb
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Nov 13 20:06:50 2018 -0500
+
+    removed food value
+    
+    D:
+
+ src/main/java/view/Controller.java | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 513a4e81cf6808a31362639816da261340ee3467
+Merge: 680c232 0534ed6
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 13 20:06:08 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 680c2325fb9c094a8d375916d6c5a2b9f37fcfbd
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 13 20:06:02 2018 -0500
+
+    Fix some bugs
+
+ src/main/java/ast/Condition.java      |   6 ++
+ src/main/java/ast/Expr.java           |   7 +-
+ src/main/java/ast/MutationInsert.java | 178 ++++++++++++++++++++--------------
+ src/main/java/ast/MutationRemove.java |   7 +-
+ src/main/java/view/Controller.java    |  10 +-
+ src/test/resources/examples/test.txt  |   8 ++
+ 6 files changed, 136 insertions(+), 80 deletions(-)
+
+commit 0534ed6ba11a8083872ba9acf39388afcc4d348c
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 13 19:59:24 2018 -0500
+
+    difference file
+
+ diff.txt | 1866 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 1866 insertions(+)
+
+commit 4db69290f951998bf47737c9763dcd85875f5fbd
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Nov 13 13:28:24 2018 -0500
+
+    added food values
+
+ src/main/java/view/Controller.java | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 9b2b57efc0280e98d21242c7659c512b6427ebda
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 13 10:22:30 2018 -0500
+
+    Add more handle exceptions
+
+ src/main/java/interpret/Interpreter.java | 10 +++++++--
+ src/main/java/model/Constants.java       |  4 ++--
+ src/main/java/view/Controller.java       | 38 +++++++++++++++++++++-----------
+ src/main/java/view/scene.fxml            | 17 +++++++++++---
+ 4 files changed, 49 insertions(+), 20 deletions(-)
+
+commit 2739d243c03cad3cca05fad07dcdf309aa730a86
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 23:03:52 2018 -0500
+
+    Add multi-threading
+
+ src/main/java/model/World.java     |  4 --
+ src/main/java/view/Controller.java | 75 ++++++++++++++++++++++++++------------
+ 2 files changed, 51 insertions(+), 28 deletions(-)
+
+commit 61dbe753072b1003ee1ee9d7ebb280ff7420b117
+Merge: c3580c1 3407fd1
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 22:22:20 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit c3580c1ad9a64d26c2e00a8812adcd7948f33d29
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 22:22:19 2018 -0500
+
+    Fix add single critter
+
+ src/main/java/view/Controller.java | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 3407fd1c1c7eead45e698c968da7a8baa3e8af39
+Merge: b4980ce 39e37bc
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Nov 12 20:28:56 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit b4980ce1d0c2af10f60c8abfe5d7a761c2dea33d
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Nov 12 20:28:53 2018 -0500
+
+    fixed size
+
+ src/main/java/view/Controller.java | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 39e37bc8442ac6497900558c6582f294c150e7db
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 20:08:19 2018 -0500
+
+    More handle exceptions
+
+ src/main/java/model/World.java     |  4 +++
+ src/main/java/view/Controller.java | 66 ++++++++++++++++++++++++++++----------
+ 2 files changed, 53 insertions(+), 17 deletions(-)
+
+commit 36cdac5fed3651a88df404b1390334a6bdc66a7d
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 16:12:43 2018 -0500
+
+    Create single step
+
+ src/main/java/view/Controller.java | 14 +++++++++++++-
+ src/main/java/view/scene.fxml      |  7 ++++---
+ 2 files changed, 17 insertions(+), 4 deletions(-)
+
+commit d50fb8562b6767b8c2c232fb8c6ee8794dfcd134
+Merge: 8d2bab7 fc4d8d6
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 15:37:51 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 8d2bab7bef2d2986dfbe4118ccabc297af48d41c
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 15:36:31 2018 -0500
+
+    Update Exceptions handling
+
+ src/main/java/view/Controller.java | 165 ++++++++++++++++++++++++-------------
+ src/main/java/view/scene.fxml      |  12 +--
+ 2 files changed, 113 insertions(+), 64 deletions(-)
+
+commit fc4d8d6e5b1373ec5eacc7c54688dc1f887a5edd
+Merge: 5f2900c b5216a8
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 12 14:39:12 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 5f2900c0672dc388bcfbe34b63b248215997540f
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 12 14:39:11 2018 -0500
+
+    change
+
+ src/main/java/view/Controller.java | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit b5216a892b13cad46b503abf4ec4c1420af988e1
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 14:37:10 2018 -0500
+
+    Test handle exceptions
+
+ src/main/java/view/Controller.java | 16 ++--------------
+ 1 file changed, 2 insertions(+), 14 deletions(-)
+
+commit 09cbcc49b1ed94083da60c4c1426571bd81637bd
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 12 13:11:50 2018 -0500
+
+    add critter to a certain hex
+
+ src/main/java/view/Controller.java | 38 ++++++++++++++++++++++++++++++++++++++
+ src/main/java/view/scene.fxml      |  9 +++++++--
+ 2 files changed, 45 insertions(+), 2 deletions(-)
+
+commit 8134773e5bebeef6a5235ace2ace74f14b022d8c
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 12:50:05 2018 -0500
+
+    Fix bugs in FXML
+
+ src/main/java/view/scene.fxml | 18 +++++++++++++-----
+ 1 file changed, 13 insertions(+), 5 deletions(-)
+
+commit 6d3993b2233304ea72bd26260e01c71823ec36ff
+Merge: f0e7dfb ec929cd
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 12 12:29:59 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit f0e7dfb6f64140f5ac95573352f17758dc61c994
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 12 12:29:51 2018 -0500
+
+    update
+
+ src/main/java/view/Controller.java |  5 ++---
+ src/main/java/view/scene.fxml      | 14 +++++++-------
+ 2 files changed, 9 insertions(+), 10 deletions(-)
+
+commit ec929cd4bc15ca533822e06be4dfa4e403b99231
+Merge: 0812f1b 36c9d2f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 12:19:55 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 0812f1bc4761e725edfd401f72993e27672db481
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 12:19:53 2018 -0500
+
+    Update handle exceptions
+
+ src/main/java/model/World.java     | 84 ++++++++++++++++++--------------------
+ src/main/java/view/Controller.java |  2 +-
+ 2 files changed, 40 insertions(+), 46 deletions(-)
+
+commit 36c9d2f0894cc51d1fb4931c624fce27bffe3851
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 12 12:14:23 2018 -0500
+
+    update
+
+ src/main/java/view/Controller.java | 52 +++++++++++++-------------------------
+ 1 file changed, 17 insertions(+), 35 deletions(-)
+
+commit 074e31f8d7b80d218292231512f5eb4e20a4b331
+Merge: d631a33 e6e14b2
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 12 11:54:26 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit d631a33a7371f4730c82b746ba369f2ddc220b13
+Merge: 2794747 50762a3
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 12 10:13:30 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit e6e14b243eef2ff239c8405cb311e285359a3dc4
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 10:12:36 2018 -0500
+
+    Add rules and the last rule
+
+ src/main/java/view/Controller.java | 15 ++++++++++-----
+ src/main/java/view/scene.fxml      | 20 ++++++++++++--------
+ 2 files changed, 22 insertions(+), 13 deletions(-)
+
+commit 27947478a94a8680f18af8e67879f9d990e0af0c
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 12 10:12:29 2018 -0500
+
+    multi critter
+
+ src/main/java/view/Controller.java | 33 +++++++++++++++++++++++----------
+ src/main/java/view/scene.fxml      |  8 +++++---
+ 2 files changed, 28 insertions(+), 13 deletions(-)
+
+commit 50762a3ed0651d717da6270330c5bdfb3cc0221b
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 12 02:09:47 2018 -0500
+
+    Handle some exceptions
+
+ src/main/java/view/Controller.java | 216 ++++++++++++++++++++++++-------------
+ 1 file changed, 139 insertions(+), 77 deletions(-)
+
+commit 9700a43099c4460d78a2c94fcb57be3007cf487b
+Merge: 7d1b7ee 7a61eb4
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Nov 12 00:09:45 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 7d1b7ee34baf37c47ae615b47549f8b337fd633e
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Nov 12 00:09:42 2018 -0500
+
+    Finishing touches
+    
+    basic color differentiation between different species as well as some size difference, but the size thing will need more work
+
+ src/main/java/view/Controller.java | 19 +++++++++++++++++--
+ 1 file changed, 17 insertions(+), 2 deletions(-)
+
+commit 7a61eb4f93dad14c118ab869902346ef4063afce
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Nov 11 22:50:26 2018 -0500
+
+    Improve zoom
+
+ src/main/java/view/Controller.java | 83 +++++++++++++++++++-------------------
+ src/main/java/view/scene.fxml      | 69 ++++++++++++++++++-------------
+ 2 files changed, 81 insertions(+), 71 deletions(-)
+
+commit 741f413110a9ce3e825e164a4bbd8c1cee937a76
+Merge: f924b5e 830af92
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 23:47:15 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit f924b5eb920da1831e06c63c70b33c842508f526
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 23:47:13 2018 -0500
+
+    Fix bugs in A5
+
+ src/main/java/interpret/Interpreter.java | 2 +-
+ src/main/java/model/Critter.java         | 2 +-
+ src/main/java/model/World.java           | 9 +++++----
+ 3 files changed, 7 insertions(+), 6 deletions(-)
+
+commit 830af92eed5974deab599e4c319a4734e2dbb24b
+Merge: 1fdb52c 660e6b1
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 22:28:18 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 1fdb52ca43201bf7ac2e4793bf8fde399282f1fe
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 22:27:42 2018 -0500
+
+    ignore
+
+ src/main/java/view/Controller.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 660e6b19e3d356e4cd14fa22d993abec442bb8d7
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 22:27:22 2018 -0500
+
+    Fix add critter
+
+ src/main/java/view/Controller.java | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
+
+commit 859eb4beb2580683d7b080f78b5c3aff7d472898
+Merge: 3f71838 421c286
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Nov 10 22:19:10 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 3f71838632e2d72da07cc0bb4dcafd022dcfeac1
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Nov 10 22:19:08 2018 -0500
+
+    Update src/main/java/view/Controller.java
+
+ src/main/java/view/Controller.java | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 421c286637cb536b447ba857b0eea6fb59e8e969
+Merge: 4196dc0 add3a1b
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 22:17:36 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 4196dc0de94f2bb20a725b67992cda48a2804a70
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 22:17:31 2018 -0500
+
+    update
+
+ src/main/java/model/World.java     | 2 +-
+ src/main/java/view/Controller.java | 3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit add3a1b3c4b3eea23fdb545ff4c5de3728236d65
+Merge: 025195c 907606f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 22:05:41 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 025195c7ece7b7f9e4dbf506cde84634fd8c3c3f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 22:05:39 2018 -0500
+
+    Fix NullPointerException
+
+ src/main/java/model/World.java     |  3 +++
+ src/main/java/view/Controller.java | 24 +++++++++++++-----------
+ 2 files changed, 16 insertions(+), 11 deletions(-)
+
+commit 907606f5bce2d2fcc936d50e23aca3f6217fe581
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 22:02:01 2018 -0500
+
+    loadcritter
+
+ src/main/java/view/Controller.java | 19 +++++++++++--------
+ src/main/java/view/Main.java       |  1 +
+ src/main/java/view/scene.fxml      |  4 +---
+ 3 files changed, 13 insertions(+), 11 deletions(-)
+
+commit 01faaf7427775b6ee190f461cf0531bc99071be3
+Merge: 5f322d8 5284a62
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 21:38:41 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 5f322d8bdc7a2bde2c547d7ae5b30eae0b4c546c
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 21:38:39 2018 -0500
+
+    textfield
+
+ src/main/java/view/Controller.java | 19 +++++++++++++++++++
+ src/main/java/view/scene.fxml      |  9 ++++++---
+ 2 files changed, 25 insertions(+), 3 deletions(-)
+
+commit 5284a625386470052faacdfca3d60708bed60405
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 21:30:36 2018 -0500
+
+    Update timer
+
+ src/main/java/view/Controller.java | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit 2fdf18dc910ee96bfa51d08351a7b9f0b2277134
+Merge: 788a5a3 fdc6538
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 21:24:05 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 788a5a39e67f6883db1448fa0236712d7301d3cc
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 21:21:21 2018 -0500
+
+    Create getCritterInfo()
+
+ src/main/java/view/Controller.java | 42 +++++++++++++++++---------------------
+ 1 file changed, 19 insertions(+), 23 deletions(-)
+
+commit fdc65383020209388bb0fae804f790cfe92c64af
+Merge: 04fb363 353af2e
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Nov 10 21:20:21 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 04fb363e2ae3c44f952912979fbf7d2f57fc042c
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Nov 10 21:18:19 2018 -0500
+
+    realtime update
+
+ src/main/java/view/Controller.java | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+commit 353af2e6389b632811351629377a56f6445538ff
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 18:33:09 2018 -0500
+
+    Create dynamic updates for critter's information
+
+ src/main/java/view/Controller.java | 39 ++++++++++++++++++++++++++++++++------
+ src/main/java/view/scene.fxml      |  2 ++
+ 2 files changed, 35 insertions(+), 6 deletions(-)
+
+commit b7e131ce24948eb6e9041aad056c07e7dc8ec1a5
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Nov 10 15:37:59 2018 -0500
+
+    Timer bug fixed?
+
+ src/main/java/view/Controller.java | 28 +++++++++++++++-------------
+ 1 file changed, 15 insertions(+), 13 deletions(-)
+
+commit 36dbf7b774357581d412e1f200c75f37ac3c482e
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Nov 10 15:31:59 2018 -0500
+
+    Timer
+    
+    for some reason the world isn't changing
+
+ src/main/java/console/Console.java    |  1 -
+ src/main/java/model/World.java        |  1 +
+ src/main/java/view/Controller.java    | 31 +++++++++++++++++++++++++++++++
+ src/main/java/view/scene.fxml         |  8 +++++---
+ src/test/resources/examples/world.txt |  6 +++---
+ 5 files changed, 40 insertions(+), 7 deletions(-)
+
+commit 45086da60fd19ace0abb30c2d8b047379ad2eb26
+Merge: a8aab76 07d8bef
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 12:40:55 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit a8aab764e7a6ea610a1dfe6c818926d36a392b28
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 12:40:50 2018 -0500
+
+    fixed
+
+ src/main/java/view/Controller.java | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 07d8bef5767730e77d5dd6e0fa708642f95c1b45
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 12:11:00 2018 -0500
+
+    Fix critter direction
+
+ src/main/java/view/Controller.java | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 4ed58fd3766ecd9abea5e3b32f461c6946d39ed3
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 12:05:18 2018 -0500
+
+    Add critter info table
+
+ src/main/java/view/Controller.java | 26 +++++++++++++++++++++++++-
+ src/main/java/view/scene.fxml      | 10 ++++++++++
+ 2 files changed, 35 insertions(+), 1 deletion(-)
+
+commit b279a40dfb617476bb4053da563da01a740be451
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 10:43:02 2018 -0500
+
+    finished
+
+ src/main/java/view/Controller.java | 22 ++++++++++++++++------
+ 1 file changed, 16 insertions(+), 6 deletions(-)
+
+commit 599440982b391bedb7a02e67141dc968c122779b
+Merge: dcd0eb0 fd7bd9d
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 02:18:17 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit dcd0eb0531b3bb7132ce25da384dbee1a2949b20
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 10 02:18:15 2018 -0500
+
+    to be fixed
+
+ src/main/java/view/Controller.java | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit fd7bd9d3624522b4a88b81ec15f8d0ff2a071292
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Nov 10 00:41:23 2018 -0500
+
+    Create help message
+
+ src/main/java/view/Controller.java  | 35 +++++++++++++++++++++++++++++++++++
+ src/main/java/view/Main.java        |  2 ++
+ src/main/java/view/helpmessage.fxml | 18 ++++++++++++++++++
+ src/main/java/view/scene.fxml       | 13 +++++++++++--
+ 4 files changed, 66 insertions(+), 2 deletions(-)
+
+commit f52f44b12f664942e7a9249e423d62663a36bd7c
+Merge: 2bb69b8 c481a4e
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Fri Nov 9 22:37:55 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 2bb69b837c012e2a1b07f95f51415bd2bd526d06
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Fri Nov 9 22:37:54 2018 -0500
+
+    Add mouse click feedback
+
+ src/main/java/view/Controller.java    | 12 ++++++++++++
+ src/test/resources/examples/world.txt |  1 +
+ 2 files changed, 13 insertions(+)
+
+commit c481a4e16ef69c80036902a77d7b7ec17116e59c
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Fri Nov 9 21:38:36 2018 -0500
+
+    more drawCritter
+
+ src/main/java/view/Controller.java | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 6c0f82a79794c6a768d293507089906f8c1184a7
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Fri Nov 9 21:24:41 2018 -0500
+
+    drawCritter
+
+ src/main/java/view/Controller.java | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+commit 9099e7a41643b2f9c6b3ca657d41677c578a060f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Fri Nov 9 21:14:35 2018 -0500
+
+    Update scroll
+
+ src/main/java/view/Controller.java | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 6296cf8bd1eb249dbce870b260e3da74f02d7632
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Fri Nov 9 16:40:47 2018 -0500
+
+    Resolve conflicts
+
+ src/main/java/view/Controller.java | 29 -----------------------------
+ 1 file changed, 29 deletions(-)
+
+commit 6ea6332b6a2542357f56870b758eeadb4bee6f0b
+Merge: 21389a8 2cd0594
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Fri Nov 9 16:37:43 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 21389a831b9b7a0d82446a16e92efa7085387c28
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Fri Nov 9 15:30:07 2018 -0500
+
+    update
+
+ src/main/java/model/World.java     |  3 ++-
+ src/main/java/view/Controller.java | 31 ++++++++++++++++---------------
+ 2 files changed, 18 insertions(+), 16 deletions(-)
+
+commit 2cd059460f5bd56a933ee4b2361a41c29f393824
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Fri Nov 9 00:53:11 2018 -0500
+
+    Update Zoom and Scroll for canvas
+    
+    I think the slider approach is better than the mouse wheel approach to do the zooming since mouse wheel can also do the scrolling, which may make it hard to do the navigation.
+
+ src/main/java/view/Controller.java | 121 +++++++++++++++++++++++--------------
+ src/main/java/view/scene.fxml      |   9 +--
+ 2 files changed, 78 insertions(+), 52 deletions(-)
+
+commit cdabe343eb4a4ae1eef324eab0255c00703737bf
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Nov 8 15:31:57 2018 -0500
+
+    Fix World
+
+ src/main/java/console/Console.java    |   4 +-
+ src/main/java/model/World.java        | 109 ++++++++++++++++++++++------------
+ src/main/java/view/Controller.java    |  56 +++++++----------
+ src/main/java/view/scene.fxml         |  10 +++-
+ src/test/resources/examples/world.txt |   6 +-
+ 5 files changed, 107 insertions(+), 78 deletions(-)
+
+commit df931bb1b2748ba8180b773266228083166fd5cf
+Merge: dc06b73 5444b9d
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 8 10:11:38 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit dc06b73a82534fb368de304e2eb764342a70d927
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 8 10:11:37 2018 -0500
+
+    update
+
+ src/main/java/view/Controller.java    | 1 -
+ src/test/resources/examples/world.txt | 6 +++---
+ src/test/resources/files/A5_Q2.txt    | 4 +++-
+ 3 files changed, 6 insertions(+), 5 deletions(-)
+
+commit 5444b9dadc79f23165a139c885f51045ea9f9c42
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Nov 8 03:08:39 2018 -0500
+
+    Update zoom
+    
+    No need to use slider
+
+ src/main/java/view/Controller.java | 83 ++++++++++++++++++++++++++------------
+ 1 file changed, 58 insertions(+), 25 deletions(-)
+
+commit 65ac9ded8a69fd15ef30ce13950cf3e5c57a9fb4
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Nov 8 02:15:15 2018 -0500
+
+    Minor bugs fixed
+
+ src/main/java/model/Constants.java |  4 ++--
+ src/main/java/view/Controller.java | 41 +++++++++++++++++++-------------------
+ 2 files changed, 23 insertions(+), 22 deletions(-)
+
+commit 35085a3332d1a95019b7046917c34de294828495
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 8 01:56:30 2018 -0500
+
+    fix zoom
+
+ src/main/java/view/Controller.java | 19 +++++++++++--------
+ 1 file changed, 11 insertions(+), 8 deletions(-)
+
+commit 25185fa63aa7a8657b1f337e954cd884b417005e
+Merge: 1284d1f 6e0cd74
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 8 01:31:22 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 1284d1f04c4d20a2babbc174dc059bb637f1a17a
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 8 01:30:40 2018 -0500
+
+    ignore this
+
+ src/main/java/view/Controller.java | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit 6e0cd74bc0e9b448e6f4a0d6a7024673d8d685a7
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Nov 8 01:28:41 2018 -0500
+
+    Fix zoom
+
+ src/main/java/view/Controller.java | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit b11f08fa5467930800280fee4c4441610c706401
+Merge: 8ac3835 b2fed7c
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Nov 8 01:21:06 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 8ac383521694bfe86161e0cbc7a0199dc16288ab
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Nov 8 01:21:01 2018 -0500
+
+    Update zoom
+    
+    Use Tim's approach
+
+ src/main/java/view/Controller.java | 32 ++++++++++++++++++++++++++------
+ src/main/java/view/scene.fxml      |  2 +-
+ 2 files changed, 27 insertions(+), 7 deletions(-)
+
+commit b2fed7cd1f4a007cf32a3e838a3ec74b7b31fade
+Merge: 1855dda 6a88da6
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 8 01:20:30 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 1855ddab9debe5bb7e39d705d9be0535fb168d23
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Thu Nov 8 01:20:28 2018 -0500
+
+    change coordinates
+
+ src/main/java/console/Console.java | 96 +++++++++++++++++++-------------------
+ src/main/java/view/Controller.java | 36 +++++++++-----
+ 2 files changed, 72 insertions(+), 60 deletions(-)
+
+commit 6a88da6ed3dec0408539e7635439e5a278696807
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Nov 8 01:00:10 2018 -0500
+
+    Add newWorld
+
+ src/main/java/view/Controller.java | 25 +++++++++++++++++++++++++
+ src/main/java/view/Main.java       | 10 +++++-----
+ src/main/java/view/scene.fxml      | 18 +++++++++---------
+ 3 files changed, 39 insertions(+), 14 deletions(-)
+
+commit 71d16147d0f8be6ff0f95b414f8ec66b1d25067c
+Merge: af187e6 66c08e4
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Nov 8 00:46:44 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit af187e693d9b89d26110d7a2f51e6d7480de69e8
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Nov 8 00:46:43 2018 -0500
+
+    Implement Zoom (on progress)
+
+ src/main/java/view/Controller.java | 11 ++++++++++-
+ src/main/java/view/Main.java       |  8 ++++++++
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+
+commit 66c08e46b227aa26a65f956fbf60b3ae6b8e58a5
+Merge: f6beb55 324a9cc
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Nov 7 23:36:00 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit f6beb553d6e01bb95e7d9108e65e8bc54c364f87
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Nov 7 23:35:59 2018 -0500
+
+    add a scroll bar
+
+ src/main/java/view/Controller.java |  1 -
+ src/main/java/view/scene.fxml      | 69 ++++++++++++++++++++------------------
+ 2 files changed, 36 insertions(+), 34 deletions(-)
+
+commit 324a9cc19498597aacdb03124429740f4ae20e86
+Merge: be2fa18 e58a0f3
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Nov 7 22:31:32 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit be2fa18b21b7d35d36ce39bfbcfce54bbc72b2d7
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Nov 7 22:30:50 2018 -0500
+
+    Connect loadWorld
+
+ src/main/java/view/Controller.java | 46 ++++++++++++++++++++------------------
+ 1 file changed, 24 insertions(+), 22 deletions(-)
+
+commit e58a0f321a46d0bc0e3d65b65dd3bda734041ce6
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Nov 7 22:29:33 2018 -0500
+
+    change to double input
+
+ src/main/java/view/Controller.java |  38 +++++++--------------
+ src/main/java/view/critter.jpg     | Bin 4990 -> 0 bytes
+ src/main/java/view/scene.fxml      |  67 ++++++++++++++++++-------------------
+ 3 files changed, 46 insertions(+), 59 deletions(-)
+
+commit 84694193f57f0eaef1dccddc061480dc1675b328
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Wed Nov 7 22:14:25 2018 -0500
+
+    Drawing world onto view
+
+ src/main/java/view/Controller.java | 65 ++++++++++++++++++++++++++++++++------
+ 1 file changed, 55 insertions(+), 10 deletions(-)
+
+commit e8654e0d9a535b653d0071024c9526164bb547c5
+Merge: 41c9196 24cb0c2
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Nov 7 22:06:13 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 41c9196567809b8af6311cc252f2ae9aa1b531e2
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Nov 7 22:04:42 2018 -0500
+
+    ignore this
+
+ src/main/java/view/Controller.java | 2 +-
+ src/main/java/view/scene.fxml      | 8 ++++++--
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+commit 24cb0c2ec906eb44bd4651eff9cf4b564440c33a
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Nov 7 20:07:17 2018 -0500
+
+    Add auto resizing
+
+ src/main/java/view/Main.java  | 60 +++++++++++++++++++++++++++++++++-
+ src/main/java/view/scene.fxml | 75 ++++++++++++++++++++++---------------------
+ 2 files changed, 98 insertions(+), 37 deletions(-)
+
+commit 443e550d6029f04aad632d644fdf90575440ded6
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Nov 7 17:28:53 2018 -0500
+
+    set stroke for grids
+
+ src/main/java/view/Controller.java | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ef1344bf4aba3eef7aa2d8a09f83a15803725bbf
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Nov 7 00:15:05 2018 -0500
+
+    hex grid
+
+ src/main/java/view/Controller.java | 26 ++++++++++++++------------
+ src/main/java/view/Main.java       |  1 -
+ 2 files changed, 14 insertions(+), 13 deletions(-)
+
+commit 61368cd35039063dfba41e306a9c9b509a12d168
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Nov 6 19:43:13 2018 -0500
+
+    Update src/main/java/view/Controller.java
+
+ src/main/java/view/Controller.java | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit a05f476dfc3324c09ce293872d6b1b6bea4dd0e2
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 6 10:58:08 2018 -0500
+
+    try this
+
+ src/main/java/view/Controller.java | 61 +++++++++++++++++++++++++++++++-------
+ src/main/java/view/scene.fxml      | 18 +++++------
+ 2 files changed, 60 insertions(+), 19 deletions(-)
+
+commit 960a0283fa52f2ded3f12bdb4d902093f60547df
+Merge: d2ee5d0 f3c71a5
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 6 08:28:14 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit d2ee5d023f7f5a7df24cbc3f813a4028ffbb232d
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 6 08:28:12 2018 -0500
+
+    initializer
+
+ src/main/java/view/Controller.java | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit f3c71a5b42950de42ae82176840e587e2941424b
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 6 02:51:40 2018 -0500
+
+    Update slider for simulation rate
+
+ src/main/java/view/Controller.java | 31 +++++++++++++++++++++----------
+ src/main/java/view/scene.fxml      | 13 +++++++++----
+ 2 files changed, 30 insertions(+), 14 deletions(-)
+
+commit 759f178c6405fef0d8c694bc079479cc3f9d4567
+Merge: bdadb9f 2cb2049
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 6 01:23:09 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit bdadb9f58b2888a22d8dc83c03e5c6fdf30b5f45
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 6 01:23:07 2018 -0500
+
+    ignore this
+
+ src/main/java/view/Controller.java | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 2cb2049c3807237d926de5355fd290b6b5547540
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 6 01:19:49 2018 -0500
+
+    Change Main back
+    
+    There should be nothing more in the main. Initialization should be done in Controller.
+
+ src/main/java/view/Controller.java |  1 -
+ src/main/java/view/Main.java       | 11 +++--------
+ src/main/java/view/scene.fxml      | 31 +------------------------------
+ 3 files changed, 4 insertions(+), 39 deletions(-)
+
+commit 286af6cc652f405a62a3734b47280ee2eea1d0ac
+Merge: ca2bd1c 78600c0
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 6 01:02:22 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit ca2bd1c0d35ed1ea20741f66243492d712ba6fa3
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 6 01:01:28 2018 -0500
+
+    main fixed
+
+ src/main/java/view/Controller.java | 17 +++++++++-
+ src/main/java/view/Main.java       |  9 ++++--
+ src/main/java/view/scene.fxml      | 64 +++++++++++++++++---------------------
+ 3 files changed, 52 insertions(+), 38 deletions(-)
+
+commit 78600c0e63d7e4ed6ad9332641c33984824a7347
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 6 00:27:42 2018 -0500
+
+    Make the GUI look better
+
+ src/main/java/view/Controller.java |  5 +++--
+ src/main/java/view/scene.fxml      | 20 ++++++++++----------
+ 2 files changed, 13 insertions(+), 12 deletions(-)
+
+commit 40a0b2059321f6e6bd6b34152bda3290b121bfe4
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Nov 6 00:08:55 2018 -0500
+
+    Fix errors in fxml
+
+ src/main/java/view/Main.java  |  3 --
+ src/main/java/view/scene.fxml | 89 +++++++++++++++++++++----------------------
+ 2 files changed, 43 insertions(+), 49 deletions(-)
+
+commit 64106c7d3b153dee7a95d3aa70d52094cf27d4c7
+Merge: adcff3b aa506d4
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 6 00:00:59 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit adcff3bb54996c50f40a3b2b16e45c00c48df903
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Nov 6 00:00:09 2018 -0500
+
+    not yet
+
+ src/main/java/view/scene.fxml | 17 ++++++++---------
+ 1 file changed, 8 insertions(+), 9 deletions(-)
+
+commit 3f1f865859dfeb570bf5b226952f57b82070a080
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 5 23:59:50 2018 -0500
+
+    not yet
+
+ src/main/java/view/Main.java | 27 ++++-----------------------
+ 1 file changed, 4 insertions(+), 23 deletions(-)
+
+commit aa506d4a3027cc4be2c5b92fcb2dcc02228168b4
+Merge: 72542f5 c7e3673
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 5 23:57:56 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 72542f5693d531b404dd71702e0635d7e0f9c132
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 5 23:57:49 2018 -0500
+
+    Create Tooltip
+
+ src/main/java/view/Controller.java |  1 +
+ src/main/java/view/scene.fxml      | 22 ++++++++++++++--------
+ 2 files changed, 15 insertions(+), 8 deletions(-)
+
+commit c7e3673825027c3f72ccd7ecd6804aa3bb041568
+Merge: ad2c823 525d5c1
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 5 23:35:39 2018 -0500
+
+    not yet
+
+commit ad2c823f74b3ff5caed171b191c34188c0ebd352
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 5 23:34:36 2018 -0500
+
+    not yet
+
+ src/main/java/view/Grid.java |  9 ++++++---
+ src/main/java/view/Main.java | 25 +++++++++++++++++++++++++
+ 2 files changed, 31 insertions(+), 3 deletions(-)
+
+commit 525d5c1b703850f19acb8a32e9c9bcfb36c96b39
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 5 23:33:07 2018 -0500
+
+    Fix bugs in file chooser
+
+ src/main/java/view/Controller.java | 10 ++++------
+ src/main/java/view/simple.fxml     | 19 -------------------
+ 2 files changed, 4 insertions(+), 25 deletions(-)
+
+commit f45b695c6d38776f2697581c9ec1d59a2b9a0dfb
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 5 23:25:33 2018 -0500
+
+    Create file chooser
+
+ src/main/java/view/Controller.java | 52 ++++++++++++++++++++++++++++++++++++++
+ src/main/java/view/Main.java       | 17 ++++++++++++-
+ src/main/java/view/scene.fxml      |  6 ++---
+ 3 files changed, 71 insertions(+), 4 deletions(-)
+
+commit eec699e5563aaf4c4a300c9c91e0b0fb92cc9963
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 5 20:31:06 2018 -0500
+
+    canvas
+
+ src/main/java/view/Main.java  | 1 +
+ src/main/java/view/scene.fxml | 3 ++-
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+commit 9502486295586ac46554d72be0a477703e090307
+Merge: 79a7e43 6f65916
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 5 20:27:44 2018 -0500
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 79a7e43f80d84a734e0d87adf0133a180da6973a
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 5 20:27:39 2018 -0500
+
+    Create Main
+
+ src/main/java/view/Grid.java |  8 ++++++++
+ src/main/java/view/Main.java | 41 +++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 49 insertions(+)
+
+commit 6f659163664cc7f087246ec0a17d6b4854448abf
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 5 20:27:29 2018 -0500
+
+    canvas
+
+ src/main/java/view/Grid.java | 54 ++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 52 insertions(+), 2 deletions(-)
+
+commit 06a07b12081a97bc05712718d3116685757f18df
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Nov 5 16:40:44 2018 -0500
+
+    Create basic scene
+
+ src/main/java/view/Main.java  | 95 -------------------------------------------
+ src/main/java/view/scene.fxml | 39 ++++++++++++++++++
+ 2 files changed, 39 insertions(+), 95 deletions(-)
+
+commit 7bbd300b236132ba5e89284585199cafdd6b7dbc
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Nov 5 11:38:13 2018 -0500
+
+    grid to be finished
+
+ src/main/java/view/Frame.java |  8 -----
+ src/main/java/view/Grid.java  | 70 +++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 70 insertions(+), 8 deletions(-)
+
+commit 3885a901d720b2371853bb9e65793582e5fafdc6
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 3 22:48:28 2018 -0400
+
+    fix bugs
+
+ build.gradle                       |  9 ++++
+ src/main/java/console/Console.java | 67 ++++++++++++++-------------
+ src/main/java/model/World.java     | 19 +++++---
+ src/main/java/view/Main.java       | 95 ++++++++++++++++++++++++++++++++++++++
+ src/main/java/view/simple.fxml     | 19 ++++++++
+ 5 files changed, 169 insertions(+), 40 deletions(-)
+
+commit 0754d60db72461a5af2612dd8d99fadee783e3d0
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Nov 3 10:47:57 2018 -0400
+
+    fix codes according to solutions
+
+ .DS_Store                          | Bin 6148 -> 6148 bytes
+ src/.DS_Store                      | Bin 0 -> 6148 bytes
+ src/main/.DS_Store                 | Bin 0 -> 6148 bytes
+ src/main/java/console/Console.java | 153 +++++--------------------------------
+ src/main/java/model/World.java     | 136 +++++++++++++++++++++++++++++++++
+ src/test/.DS_Store                 | Bin 0 -> 6148 bytes
+ src/test/java/.DS_Store            | Bin 0 -> 6148 bytes
+ src/test/resources/.DS_Store       | Bin 0 -> 6148 bytes
+ 8 files changed, 157 insertions(+), 132 deletions(-)
+
+commit 4129e239090d5bb9704e649f5c453a87b8af3805
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Thu Nov 1 20:34:59 2018 -0400
+
+    added critter image
+
+ src/main/java/view/Frame.java  |   2 +-
+ src/main/java/view/critter.jpg | Bin 0 -> 4990 bytes
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+commit 564dacd7b60c5be14cc6c2e02df9bf53bc66f5c7
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Thu Nov 1 20:22:15 2018 -0400
+
+    ?
+
+ src/main/java/view/Frame.java | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 128efc31ed0fc6bce2ff907008f86bc6e4a11b73
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 30 23:53:23 2018 -0400
+
+    Delete comments
+
+ src/main/java/model/World.java | 4 ----
+ 1 file changed, 4 deletions(-)
+
+commit 4935c1f63aebc238ecead15a910265b268ab2d81
+Merge: 5a79d80 328a2eb
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 30 23:43:58 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 5a79d801f748794006da013719d1b9b967c6cc08
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 30 23:43:53 2018 -0400
+
+    Handle out of bound arguments
+
+ src/main/java/model/Critter.java | 40 ++++++++++++++++++++++++++++++++++++++--
+ src/main/java/model/World.java   | 16 ++++++++++++----
+ 2 files changed, 50 insertions(+), 6 deletions(-)
+
+commit 328a2eba35baa4aa7707bb538533c13376cf6ff8
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 30 23:27:38 2018 -0400
+
+    update
+
+ src/main/java/model/World.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 17353126e295f21481a696836fc51bd2be2f82ff
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 30 23:18:05 2018 -0400
+
+    .
+
+ src/main/java/interpret/Interpreter.java |  5 ++++-
+ src/main/java/interpret/Simulator.java   | 25 -------------------------
+ 2 files changed, 4 insertions(+), 26 deletions(-)
+
+commit d61a015d7336c9266f5dc2adc30b0ce2c97d5ecd
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 30 23:06:22 2018 -0400
+
+    last rule fixed
+
+ src/main/java/console/Console.java              | 4 +---
+ src/test/resources/examples/example-critter.txt | 2 +-
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+
+commit 49f6468f63f232337bceee19bcd55752748c8301
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 30 23:05:46 2018 -0400
+
+    Update last rule
+
+ src/main/java/model/Critter.java | 12 ++++++++++++
+ src/main/java/model/World.java   |  1 +
+ 2 files changed, 13 insertions(+)
+
+commit 0519fa1df40b2c2538818d4a1a213e8594689102
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 30 22:42:29 2018 -0400
+
+    Finish comments
+
+ src/main/java/model/Critter.java  | 120 ++++++++++++++++++++++++++++++++++++++
+ src/main/java/model/Hex.java      |  52 ++++++++++++++++-
+ src/main/java/model/Location.java |  18 ++++++
+ src/main/java/model/World.java    | 120 ++++++++++++++++++++++++++++++++++++--
+ 4 files changed, 304 insertions(+), 6 deletions(-)
+
+commit 6145cc31a2b221f95deb2231d79c939ea6bb4bfe
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 30 22:29:33 2018 -0400
+
+    test file
+
+ src/test/java/console/ConsoleTest.java | 16 +++++++++-------
+ 1 file changed, 9 insertions(+), 7 deletions(-)
+
+commit 3bb520352202e7e644ef30b43c73ecdccd5796ff
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 30 22:22:07 2018 -0400
+
+    -some comments
+
+ src/main/java/console/Console.java | 16 ----------------
+ 1 file changed, 16 deletions(-)
+
+commit a7cf99b22f77b4b055da6d433f48b01cf0291951
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 30 22:19:55 2018 -0400
+
+    fix nullpointer bug
+
+ src/main/java/console/Console.java | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1ee1a5553ee9461c8761c1d2482f03ee4dffeba6
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 30 22:07:24 2018 -0400
+
+    fix
+
+ src/main/java/console/Console.java | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit cdc803cb46ac559c34e566187c38b518d1948d9a
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 30 22:01:03 2018 -0400
+
+    change
+
+ log.txt                            | 0
+ src/main/java/console/Console.java | 2 +-
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+commit 374e0c81331a84cc6db604a2f750b2b51c45b6d0
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 30 16:53:27 2018 -0400
+
+    some test case
+
+ src/test/java/console/ConsoleTest.java | 92 +++++++++++++++++++++++++++++-----
+ 1 file changed, 79 insertions(+), 13 deletions(-)
+
+commit 9366b025c4f17253091735f993c28fa726a59827
+Merge: 8543e76 4e0257a
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 30 13:03:51 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 8543e76dfd80a22979c731ba60842347548d4a46
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 30 13:03:10 2018 -0400
+
+    Create comments for Mutations
+
+ .DS_Store                                | Bin 6148 -> 0 bytes
+ src/.DS_Store                            | Bin 6148 -> 0 bytes
+ src/main/java/ast/MutationDuplicate.java |   3 +++
+ src/main/java/ast/MutationInsert.java    |   8 ++++++++
+ src/main/java/ast/MutationRemove.java    |   8 ++++++++
+ src/main/java/ast/MutationReplace.java   |   3 +++
+ src/test/.DS_Store                       | Bin 6148 -> 0 bytes
+ src/test/resources/.DS_Store             | Bin 6148 -> 0 bytes
+ 8 files changed, 22 insertions(+)
+
+commit 4e0257aad21a6f98399208004b5f145db45431ed
+Merge: 564a808 4cb3b98
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 30 12:38:25 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 564a808d8e3f7d31f7505596536ee762a746d4c5
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 30 12:36:49 2018 -0400
+
+    fake test case
+
+ src/test/java/console/ConsoleTest.java          | 3 +--
+ src/test/resources/examples/example-critter.txt | 2 +-
+ 2 files changed, 2 insertions(+), 3 deletions(-)
+
+commit 4cb3b98327e842a5b6c4d235c466f03b45ed497e
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 30 12:35:58 2018 -0400
+
+    Revert "Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world"
+    
+    This reverts commit 90e020ee6a46f1d1195860acf92a0fd08c959d6a, reversing
+    changes made to de9e8fd2f912062ece53bdad88fc094e5fc90829.
+
+ .DS_Store                              | Bin 6148 -> 6148 bytes
+ src/.DS_Store                          | Bin 6148 -> 0 bytes
+ src/main/java/console/Console.java     |  20 +++-
+ src/main/java/model/Critter.java       |  30 -----
+ src/main/java/model/World.java         |  14 +--
+ src/test/.DS_Store                     | Bin 6148 -> 0 bytes
+ src/test/java/console/ConsoleTest.java | 197 ---------------------------------
+ src/test/java/parser/ParserTest.java   |   2 +-
+ src/test/resources/.DS_Store           | Bin 6148 -> 0 bytes
+ 9 files changed, 22 insertions(+), 241 deletions(-)
+
+commit 90e020ee6a46f1d1195860acf92a0fd08c959d6a
+Merge: de9e8fd e5b5379
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 30 12:32:39 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit de9e8fd2f912062ece53bdad88fc094e5fc90829
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 30 12:31:56 2018 -0400
+
+    Hopefully fixed
+    
+    I don't wanna look at this anymore D:
+
+ src/main/java/interpret/Interpreter.java | 4 ++--
+ src/main/java/parse/ParserImpl.java      | 6 ++++--
+ 2 files changed, 6 insertions(+), 4 deletions(-)
+
+commit e5b537979b8c73eb14cb927b4451fc29ec64d87a
+Merge: d1484e8 14e161f
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Oct 29 22:29:50 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit d1484e8b130027f03d970b3a57048fc43f84a726
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Oct 29 22:28:51 2018 -0400
+
+    fake test
+
+ .DS_Store                                       | Bin 6148 -> 6148 bytes
+ src/.DS_Store                                   | Bin 0 -> 6148 bytes
+ src/main/java/console/Console.java              |  20 +--
+ src/test/.DS_Store                              | Bin 0 -> 6148 bytes
+ src/test/java/console/ConsoleTest.java          | 197 ++++++++++++++++++++++++
+ src/test/java/parser/ParserTest.java            |   2 +-
+ src/test/resources/.DS_Store                    | Bin 0 -> 6148 bytes
+ src/test/resources/examples/example-critter.txt |  14 +-
+ 8 files changed, 208 insertions(+), 25 deletions(-)
+
+commit 14e161f473e9bdef4d99ba2e2e58d84a520c498a
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Oct 29 22:28:27 2018 -0400
+
+    Finish mutations
+
+ src/main/java/model/Critter.java | 30 ++++++++++++++++++++++++++++++
+ src/main/java/model/World.java   | 14 ++++++++++----
+ 2 files changed, 40 insertions(+), 4 deletions(-)
+
+commit f852f6b35b99309a874256df4682eb0a56d12d06
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Oct 29 22:05:14 2018 -0400
+
+    Fix converting critters to food
+    
+    Hopefully...
+
+ src/main/java/model/World.java | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 7d50c9905f96daef4147402a889e2f8550e19d87
+Merge: 7895685 b54209a
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Oct 29 22:02:55 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 7895685f559620b20c41f82bf5f0f00446ea2ee8
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Oct 29 22:02:49 2018 -0400
+
+    Fix converting critters to food
+
+ src/main/java/model/World.java | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+commit b54209a157a92c322438a87a0fbae26c7b5d7948
+Merge: 6d1b3a2 21b28e6
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Oct 29 21:52:37 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 21b28e63803d0c3925c646c78c5cfcbac577fa98
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Oct 29 21:34:41 2018 -0400
+
+    Fix grow() and removeCritter()
+
+ src/main/java/model/Critter.java | 1 +
+ src/main/java/model/World.java   | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit 483cdee564ca5b6cdb52c053a39015e1ea5b103d
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Oct 29 21:32:45 2018 -0400
+
+    Revert "Fix grow()"
+    
+    This reverts commit 5f80af8e95e70a3cd30e2122f405e6c74161e7e4.
+
+ src/main/java/model/Critter.java                | 1 -
+ src/main/java/model/World.java                  | 3 ---
+ src/test/resources/examples/example-critter.txt | 4 ++--
+ 3 files changed, 2 insertions(+), 6 deletions(-)
+
+commit 6d1b3a2da3e24c9794ea1d103c19891ea2d47059
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Oct 29 21:27:49 2018 -0400
+
+    Interpreter debugging
+
+ src/main/java/interpret/Interpreter.java | 23 ++++++++++++-----------
+ src/main/java/model/Critter.java         |  1 +
+ src/main/java/model/World.java           |  3 +++
+ 3 files changed, 16 insertions(+), 11 deletions(-)
+
+commit 5f80af8e95e70a3cd30e2122f405e6c74161e7e4
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Mon Oct 29 18:48:37 2018 -0400
+
+    Fix grow()
+
+ src/main/java/model/Critter.java                | 1 +
+ src/main/java/model/World.java                  | 3 +++
+ src/test/resources/examples/example-critter.txt | 4 ++--
+ 3 files changed, 6 insertions(+), 2 deletions(-)
+
+commit 585c9b2b009009529e62641ef0cb61a7c9d65fb2
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Oct 29 17:40:27 2018 -0400
+
+    Debugging interpret
+
+ src/main/java/interpret/Interpreter.java | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
+
+commit 71efa530bb4b7eff1e437dd195ffab087c06aa0b
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Oct 29 00:00:18 2018 -0400
+
+    Revert "Revert "ascii finished""
+    
+    This reverts commit 3a4fc8824ab487bc18b5b8685808d81592b99323.
+
+ src/main/java/console/Console.java | 56 ++++++++++++++++++++++++--------------
+ 1 file changed, 36 insertions(+), 20 deletions(-)
+
+commit 3a4fc8824ab487bc18b5b8685808d81592b99323
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Oct 28 23:49:46 2018 -0400
+
+    Revert "ascii finished"
+    
+    This reverts commit cbc8652bda161f8f75476e20df9b78ac925ad8d4.
+
+ src/main/java/console/Console.java | 56 ++++++++++++++------------------------
+ 1 file changed, 20 insertions(+), 36 deletions(-)
+
+commit 43a96e989a0b884e55efb1d929b2f489782a7ebc
+Merge: cbc8652 35fcb84
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Oct 28 23:48:49 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit cbc8652bda161f8f75476e20df9b78ac925ad8d4
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Oct 28 23:48:47 2018 -0400
+
+    ascii finished
+
+ src/main/java/console/Console.java | 56 ++++++++++++++++++++++++--------------
+ 1 file changed, 36 insertions(+), 20 deletions(-)
+
+commit 35fcb84bd18c6f19617633319d24800d97e89ecd
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Oct 28 23:17:11 2018 -0400
+
+    Fix getAllFront()
+
+ src/main/java/model/World.java | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+commit 11888488844bba122d22cf68c06bbfc2eca787c2
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sun Oct 28 22:40:03 2018 -0400
+
+    Pass should now reset
+
+ src/main/java/interpret/Interpreter.java |  1 +
+ src/test/resources/files/A5_Q2.txt       | 10 ++++++++--
+ 2 files changed, 9 insertions(+), 2 deletions(-)
+
+commit e181c7b58b77209ee55932e331c6358f45fad19c
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Oct 28 22:25:47 2018 -0400
+
+    Fix bugs in World
+
+ src/main/java/console/Console.java | 2 +-
+ src/main/java/model/World.java     | 9 +++++++--
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit fa4489ccc0d1942da42858894d9854914d303024
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sun Oct 28 21:13:36 2018 -0400
+
+    debug parseFactor
+
+ src/main/java/interpret/Interpreter.java | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+
+commit 109e299e6d294760ef727e541a906ffa4848d033
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Oct 28 20:54:37 2018 -0400
+
+    print info finished
+
+ src/main/java/console/Console.java | 84 +++++++++++++++++++++-----------------
+ 1 file changed, 47 insertions(+), 37 deletions(-)
+
+commit d21af0d432dcddee75d56ca6f7371075e0762935
+Merge: 7200381 6d549e4
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Oct 28 18:13:44 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 7200381115319a0577359ba9ed118a7de18e5e7e
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Oct 28 18:13:41 2018 -0400
+
+    excpet info
+
+ src/main/java/console/Console.java | 57 ++++++++++++++++++++++----------------
+ src/main/java/model/Critter.java   |  3 +-
+ 2 files changed, 35 insertions(+), 25 deletions(-)
+
+commit 6d549e441b9f4c96a8b212e0b04d1e3fe7b3d366
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Oct 28 16:54:34 2018 -0400
+
+    Update conditions for executing actions
+
+ src/main/java/model/Critter.java | 2 +-
+ src/main/java/model/World.java   | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit a4987ae8a63097cbf677f78f1a043217708c5a14
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Oct 28 16:31:17 2018 -0400
+
+    Fix methods used for getting critters' environment
+
+ src/main/java/console/Console.java | 2 ++
+ src/main/java/model/World.java     | 5 +++--
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+commit a3d7dcf8ea493be7a47b0507a9372d4e6c4b8c45
+Merge: ecc3e67 7901ff0
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Oct 28 15:52:03 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit ecc3e67cbdcce9170925db8030ce73887922b7cd
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Oct 28 15:51:10 2018 -0400
+
+    Update my world file
+
+ src/test/resources/examples/world.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 7901ff072bc5fa4fba1be4f6d385552dbea4a1c6
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Oct 28 15:50:19 2018 -0400
+
+    update
+
+ .DS_Store                             | Bin 0 -> 6148 bytes
+ src/main/java/console/Console.java    |  11 +++++------
+ src/test/resources/examples/world.txt |   6 +++---
+ 3 files changed, 8 insertions(+), 9 deletions(-)
+
+commit ff802ba5f660a32ad79dfab01259ef1bce65bd43
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Oct 28 15:50:19 2018 -0400
+
+    Update hexInfo
+
+ src/main/java/console/Console.java | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit e54a29de5187bcf5f8b62156a12d32b4f450e36a
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sun Oct 28 03:42:04 2018 -0400
+
+    Update newWorld()
+
+ src/main/java/console/Console.java | 9 +++++----
+ src/main/java/model/World.java     | 5 +++++
+ 2 files changed, 10 insertions(+), 4 deletions(-)
+
+commit 49a14cff2461f0b7bc6b6bf63c74f1dab6c82c0d
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Oct 27 23:04:27 2018 -0400
+
+    update
+
+ src/test/java/parser/ParserTest.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d78991168c49f9a134fe20811991b5c0473c3da7
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Oct 27 23:03:42 2018 -0400
+
+    fix addcritter
+
+ src/main/java/console/Console.java   |  30 +++++-----
+ src/main/java/parse/Tokenizer.java   | 106 -----------------------------------
+ src/test/java/parser/ParserTest.java |   2 +-
+ 3 files changed, 15 insertions(+), 123 deletions(-)
+
+commit c50edc2c96b5603ae74fcd4b021efefe701f544c
+Merge: 38db1ca f6a4f96
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Oct 27 22:03:37 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 38db1cac8f7c5015d5bc2ac01d6fd99b76514eef
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Oct 27 22:03:35 2018 -0400
+
+    console fixed
+
+ src/main/java/console/Console.java |   2 +-
+ src/main/java/parse/Tokenizer.java | 106 +++++++++++++++++++++++++++++++++++++
+ 2 files changed, 107 insertions(+), 1 deletion(-)
+
+commit f6a4f9618e05607dd390d4bad20c6b6487f2138d
+Merge: 89d36f9 53b6914
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Oct 27 20:53:46 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 89d36f985a8601c8fec65b88c58a743e51a07704
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Oct 27 20:53:44 2018 -0400
+
+    Minor corrections
+
+ src/main/java/console/Console.java     |  6 +++---
+ src/main/java/model/World.java         |  5 ++++-
+ src/test/java/console/ConsoleTest.java | 10 ++++++++++
+ 3 files changed, 17 insertions(+), 4 deletions(-)
+
+commit 53b69148cb4af11e6a231a2a0f147c173895e8a9
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Oct 27 20:53:12 2018 -0400
+
+    Added one parentesis
+
+ src/main/java/console/Console.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 451fc6117a9d8b714c05cee1224f1a0eb26f2c88
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Oct 27 20:49:37 2018 -0400
+
+    except last rule
+
+ src/main/java/console/Console.java | 34 ++++++++++++++++++++++------------
+ 1 file changed, 22 insertions(+), 12 deletions(-)
+
+commit 6be22d2d9b4b151a7b88cc304bfc554ec3631353
+Merge: f55bbfd d8a9279
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Oct 27 17:49:57 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit f55bbfda74b062bbd0dd3784b24f5470acec5d3e
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Oct 27 17:49:54 2018 -0400
+
+    wirtten Q2
+
+ src/test/resources/files/A5_Q2.txt | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit d8a92797c4043a2d69cd6ac0eb4f6b9c88561d9f
+Merge: 8685cc1 63d1f12
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Oct 27 16:39:16 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 8685cc146fbaa9d0f2ceb1f3acacddfdf4b06c4f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Oct 27 16:39:10 2018 -0400
+
+    Connect Interpreter to World
+
+ src/main/java/interpret/Interpreter.java |  6 +++-
+ src/main/java/interpret/Result.java      |  8 +++++
+ src/main/java/model/World.java           | 51 ++++++++++++++++++++++++++++----
+ 3 files changed, 59 insertions(+), 6 deletions(-)
+
+commit 63d1f1299f925bb03fe32a206bbe8e6f314837ff
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Oct 27 16:38:50 2018 -0400
+
+    return critter
+
+ src/main/java/console/Console.java | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e3560567ffd7667aee45602a22dbceb6483d09f8
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sat Oct 27 03:25:11 2018 -0400
+
+    besides timesteps
+
+ src/main/java/console/Console.java | 195 ++++++++++++++++++++++---------------
+ 1 file changed, 115 insertions(+), 80 deletions(-)
+
+commit b95fb33ccc7dbbd89a91ef4085aa4d8e936863dc
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Sat Oct 27 01:49:39 2018 -0400
+
+    Finish critters actions
+    
+    It is harder than I thought...
+
+ src/main/java/model/Critter.java |  29 ++++--
+ src/main/java/model/Hex.java     |   3 +-
+ src/main/java/model/World.java   | 214 +++++++++++++++++++++++++++++++++++++--
+ 3 files changed, 229 insertions(+), 17 deletions(-)
+
+commit 75768e5e723866569177064709a0bde043e2c12e
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Fri Oct 26 18:22:26 2018 -0400
+
+    Finish Mutations
+
+ src/main/java/ast/MutationFactory.java |   8 ++-
+ src/main/java/ast/MutationInsert.java  | 104 +++++++++++++++++++++++++++++++++
+ 2 files changed, 110 insertions(+), 2 deletions(-)
+
+commit bdb4aed9bf9454764983df361e0a151ea9691fce
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Fri Oct 26 11:03:48 2018 -0400
+
+    unfinished
+
+ src/main/java/console/Console.java | 30 ++++++++++++++++++------------
+ src/main/java/model/Critter.java   |  3 ++-
+ src/main/java/model/World.java     |  3 ++-
+ 3 files changed, 22 insertions(+), 14 deletions(-)
+
+commit 834576c23fd47c0d6621f731a1b48dcc2cb0d346
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Oct 25 21:49:16 2018 -0400
+
+    Update Mutations
+
+ src/main/java/ast/MutationFactory.java   |  8 +++--
+ src/main/java/ast/MutationRemove.java    | 51 ++++++++++++++++++++++++++++++++
+ src/main/java/ast/MutationReplace.java   | 22 ++++++++------
+ src/main/java/ast/MutationSwap.java      | 25 ++++++++++------
+ src/main/java/ast/MutationTransform.java | 14 +++++----
+ 5 files changed, 95 insertions(+), 25 deletions(-)
+
+commit 1a04829e81531b3de706b5d16b42d9c1a1798f62
+Merge: 3697974 b3b92b8
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Oct 25 21:17:24 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 3697974d31abab15a3312fd249528ad21f04d13b
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Oct 25 21:17:08 2018 -0400
+
+    Update some methods for simulation
+
+ src/main/java/model/Critter.java | 24 ++++++++++++++----------
+ src/main/java/model/Hex.java     | 21 +++++++++++++--------
+ src/main/java/model/World.java   | 34 ++++++++++++++++++++++++++++++----
+ 3 files changed, 57 insertions(+), 22 deletions(-)
+
+commit 6cf5e634dcd5585fa8ecf0b2e178f5814ad7d79a
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Thu Oct 25 21:16:32 2018 -0400
+
+    Create Transform Mutation
+
+ src/main/java/ast/MutationFactory.java   |  8 ++-
+ src/main/java/ast/MutationTransform.java | 87 ++++++++++++++++++++++++++++++++
+ 2 files changed, 93 insertions(+), 2 deletions(-)
+
+commit b3b92b80e5e32fda8b9ac087478a63afaa5a1e89
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Thu Oct 25 20:38:19 2018 -0400
+
+    Interpreter Code finished
+    
+    debugging is going to be so much fun....
+
+ src/main/java/interpret/Interpreter.java | 52 +++++++++++++++++++++++++++-----
+ 1 file changed, 45 insertions(+), 7 deletions(-)
+
+commit a6abc267279b0d9fb6d41df70d9b95b04efd8d14
+Merge: 77967d0 0aa2f6c
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Wed Oct 24 23:39:35 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 77967d0803aea35bf4f4cd323b382f5c6c50d52b
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Wed Oct 24 23:39:33 2018 -0400
+
+    interpretExpression and interpretTerm
+
+ src/main/java/interpret/Interpreter.java | 26 +++++++++++++++++++++++++-
+ 1 file changed, 25 insertions(+), 1 deletion(-)
+
+commit 0aa2f6cf913604ecda191a9dfe0f4d14a9bd913d
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Oct 24 23:19:46 2018 -0400
+
+    Update the components for simulation
+
+ src/main/java/console/Console.java | 17 +++++++++++------
+ src/main/java/model/Critter.java   | 34 +++++++++++++++++++++++++++++-----
+ src/main/java/model/Hex.java       |  6 +++++-
+ src/main/java/model/World.java     | 11 +++++++++++
+ 4 files changed, 56 insertions(+), 12 deletions(-)
+
+commit e5d3138153fd4ae2618b21f40ccca21aa122f018
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Oct 24 18:23:24 2018 -0400
+
+    Fix bugs in mutations
+
+ src/main/java/ast/Mutation.java        |   2 +-
+ src/main/java/ast/MutationGeneral.java |  68 +++++++++++------
+ src/main/java/ast/MutationReplace.java | 130 +++------------------------------
+ src/main/java/ast/MutationSwap.java    |  67 +++++++----------
+ 4 files changed, 82 insertions(+), 185 deletions(-)
+
+commit 319530c5bafdf3fe9a84a24f913e493363471938
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Oct 24 10:43:16 2018 -0400
+
+    unfinished update
+
+ src/main/java/console/Console.java   | 91 ++++++++++++++++++++++++++++++++++--
+ src/main/java/interpret/Critter.java |  5 --
+ src/main/java/world/Critter.java     | 67 --------------------------
+ 3 files changed, 88 insertions(+), 75 deletions(-)
+
+commit d41f0877f05e8d3881bf0432a284cd3c27638992
+Merge: a09736b 7d543c5
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Oct 24 09:46:27 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit a09736b7bcb15befe8ed49dc3329d349fa6aa4ac
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Oct 24 09:46:25 2018 -0400
+
+    update cases
+
+ src/main/java/console/Console.java | 17 ++++++++++-------
+ 1 file changed, 10 insertions(+), 7 deletions(-)
+
+commit 7d543c5726aaf32c56f1dfdf9f49b07faeb887e7
+Merge: 6646ee8 a5b0508
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Oct 24 02:39:51 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 6646ee8bfe45a978faf100a028775a79cda1bb21
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Wed Oct 24 02:39:42 2018 -0400
+
+    Add more Critter actions
+
+ src/main/java/model/Critter.java             | 154 +++++++++++++++++++++++++++
+ src/main/java/{world => model}/Hex.java      |  12 +--
+ src/main/java/{world => model}/Location.java |   2 +-
+ src/main/java/{world => model}/World.java    |   4 +-
+ src/main/java/world/Critter.java             |  65 -----------
+ 5 files changed, 158 insertions(+), 79 deletions(-)
+
+commit a5b05088de08c4251d3eae7735234acb152240db
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Oct 24 02:12:25 2018 -0400
+
+    part of the console
+
+ src/main/java/console/Console.java | 42 ++++++++++++++++++++++++++++++++++----
+ src/main/java/world/Critter.java   |  1 +
+ 2 files changed, 39 insertions(+), 4 deletions(-)
+
+commit f59ad7288e16a92e4e73824c356e2ec1b890d6ff
+Merge: dde0bef ec0d5df
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Oct 24 01:35:15 2018 -0400
+
+    ignore
+
+commit dde0bef2602040d7e3e4cfd5d2f60b64cfdaf82c
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Oct 24 01:33:40 2018 -0400
+
+    update
+
+ src/main/java/console/Console.java       | 17 +++++++++++++++++
+ src/main/java/interpret/Critter.java     |  5 +++++
+ src/main/java/interpret/Interpreter.java |  2 +-
+ src/main/java/interpret/Simulator.java   | 25 -------------------------
+ src/main/java/interpret/State.java       |  2 +-
+ src/main/java/world/Critter.java         |  1 +
+ src/main/java/world/World.java           |  3 ++-
+ 7 files changed, 27 insertions(+), 28 deletions(-)
+
+commit ec0d5df38799ef10fb9e156fcdf6123d4a36748d
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 23 23:04:58 2018 -0400
+
+    Updated Interpreted
+    
+    Changed interpretCondition and interpretConjunction, also added flushed out some of the logical structure and some methods.
+
+ src/main/java/interpret/Interpreter.java | 34 +++++++++++++++++++++-----------
+ 1 file changed, 22 insertions(+), 12 deletions(-)
+
+commit bd7d8e46425660389265f8d75e3eace6f76651f4
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 23 22:46:59 2018 -0400
+
+    Create nearby and ahead
+
+ src/main/java/interpret/Simulator.java | 50 +++++++++++++++++-----------------
+ src/main/java/world/Critter.java       | 49 ++++++++++++++++++++++++++++++++-
+ src/main/java/world/Hex.java           | 10 +++++++
+ src/main/java/world/World.java         | 28 +++++++++++++++----
+ 4 files changed, 105 insertions(+), 32 deletions(-)
+
+commit 36235770d5b17806caed31458cc6146966d28926
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 23 22:13:37 2018 -0400
+
+    parserImpl Change
+    
+    trying to make it so that "and" and "or" have more than 2 children.
+
+ src/main/java/parse/ParserImpl.java | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit dc07882260ec5befb19fb9100402544f59fdb1ae
+Merge: debabad 5c504c6
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 23 22:09:32 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit debabaddaa8bb6aef976bc8078a6536277d1f22d
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 23 22:09:30 2018 -0400
+
+    push before I walk back into the valley of Death that is known as parserImpl
+
+ src/main/java/interpret/Interpreter.java | 33 +++++++++++++++++++++++++++-----
+ 1 file changed, 28 insertions(+), 5 deletions(-)
+
+commit 5c504c67355916cf0861815f4e826ca9dde3734f
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 23 21:35:16 2018 -0400
+
+    Upload Constants
+
+ src/main/java/model/Constants.java | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit defb7c9a660b376a4f461af9eb15d4d69ca6f5c2
+Merge: f96af22 9576074
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 23 21:00:25 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 9576074172d290867b4d468fe6197a2ccd5eb023
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 23 21:00:15 2018 -0400
+
+    Initial code for Result and Food
+
+ src/main/java/interpret/Food.java        | 9 +++++++++
+ src/main/java/interpret/Interpreter.java | 2 +-
+ src/main/java/interpret/Result.java      | 6 +++++-
+ 3 files changed, 15 insertions(+), 2 deletions(-)
+
+commit f96af22fde693a63745cecc20b7eb665f19dd757
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 23 20:59:55 2018 -0400
+
+    Update World
+
+ src/main/java/world/Hex.java      |  9 +++++++++
+ src/main/java/world/Location.java |  4 ++++
+ src/main/java/world/World.java    | 23 +++++++++++++++++++----
+ 3 files changed, 32 insertions(+), 4 deletions(-)
+
+commit 50172ff74bda8399d6d2b6e39c10b4423ab51df0
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 23 20:57:24 2018 -0400
+
+    Interpreter some basic stuff
+
+ src/main/java/interpret/Interpreter.java | 34 ++++++++++++++++++++++++++++++--
+ 1 file changed, 32 insertions(+), 2 deletions(-)
+
+commit a42d86739faa5942394892233a8b34559ad59655
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 23 02:02:48 2018 -0400
+
+    Update World
+    
+    Actually foods, rocks, and critters can be represented by certain values, so it is no need to use the generics.
+
+ src/main/java/world/Critter.java | 18 +++++++++++
+ src/main/java/world/Hex.java     | 66 +++++++++++++++++++++++++++++++---------
+ src/main/java/world/HexImpl.java | 62 -------------------------------------
+ src/main/java/world/World.java   | 44 +++++++++++++++++++++++++++
+ 4 files changed, 113 insertions(+), 77 deletions(-)
+
+commit 5cfdcd6ff3cc187aa142035b3e236d79f15f15fc
+Author: Xiuyu Li <xl289@cornell.edu>
+Date:   Tue Oct 23 00:04:29 2018 -0400
+
+    Create the blueprint for the World
+
+ src/main/java/main/ParseAndMutateApp.java |  2 +-
+ src/main/java/world/Hex.java              | 20 ++++++++++
+ src/main/java/world/HexImpl.java          | 62 +++++++++++++++++++++++++++++++
+ src/main/java/world/Location.java         | 42 +++++++++++++++++++++
+ 4 files changed, 125 insertions(+), 1 deletion(-)
+
+commit aeb3dcfc14f21548f742878adeec061510ea4b77
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sun Oct 21 18:19:57 2018 -0400
+
+    .
+
+ src/main/java/interpret/Food.java      |  4 ++++
+ src/main/java/interpret/Simulator.java | 25 +++++++++++++++++++++++++
+ 2 files changed, 29 insertions(+)
+
+commit fc1a803e6dc042bb5ea62dc8d3202dd3217dadb4
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Oct 20 23:24:56 2018 -0400
+
+    Final Parser bugfix hopefully
+
+ critterworld.iml                    | 12 +++++++-----
+ src/main/java/parse/ParserImpl.java |  2 +-
+ 2 files changed, 8 insertions(+), 6 deletions(-)
+
+commit 35865ac5fac94e10043b79baf810d3e65c3aa6f2
+Author: xl289 <xl289@cornell.edu>
+Date:   Sat Oct 20 21:04:29 2018 -0400
+
+    Upload A5
+
+ src/main/java/console/Console.java              | 228 ++++++++++++++++++++++++
+ src/main/java/interpret/Interpreter.java        |  31 ++++
+ src/main/java/interpret/Result.java             |  15 ++
+ src/main/java/interpret/State.java              |  63 +++++++
+ src/test/resources/examples/example-critter.txt |  22 +++
+ src/test/resources/examples/world.txt           |  14 ++
+ 6 files changed, 373 insertions(+)
+
+commit 3fb273b7f19e402fedf2b51b36604b21fadbcd09
+Author: xl289 <xl289@cornell.edu>
+Date:   Sat Oct 20 21:03:56 2018 -0400
+
+    Banish .DS_Store
+
+ .DS_Store               | Bin 6148 -> 0 bytes
+ src/.DS_Store           | Bin 6148 -> 0 bytes
+ src/main/.DS_Store      | Bin 6148 -> 0 bytes
+ src/main/java/.DS_Store | Bin 6148 -> 0 bytes
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 58e315cfe4180ced5fb527d29934f464a190e0c2
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Wed Oct 17 14:21:38 2018 -0400
+
+    final update
+
+ .DS_Store                              | Bin 6148 -> 6148 bytes
+ src/main/java/ast/AbstractNode.java    |  12 ++++++------
+ src/main/java/ast/MutationGeneral.java |  26 --------------------------
+ src/main/java/ast/MutationSwap.java    |   2 --
+ src/test/java/parser/ParserTest.java   |  19 +++++++------------
+ src/test/resources/files/test          |   6 ++++++
+ 6 files changed, 19 insertions(+), 46 deletions(-)
+
+commit 626cc05837fa94b421d352b8689262cd924c4633
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 23:52:52 2018 -0400
+
+    Update src/main/java/ast/MutationGeneral.java
+
+ src/main/java/ast/MutationGeneral.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6a96331eadd0f341e724b322eee61efc48b7ec71
+Merge: 068951c 279f9c9
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 23:50:28 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 068951c346a816a3f9825bc68ad79421b9ac76c6
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 23:48:42 2018 -0400
+
+    Update Mutations
+
+ src/main/java/ast/MutationDuplicate.java  | 17 +++++----
+ src/main/java/ast/MutationGeneral.java    | 60 +++++++++++++++----------------
+ src/main/java/main/ParseAndMutateApp.java | 35 ++++++++++--------
+ 3 files changed, 61 insertions(+), 51 deletions(-)
+
+commit 279f9c937f26a479cee9393525896f85e00e9d8d
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 23:18:52 2018 -0400
+
+    java doc
+
+ src/main/java/ast/AbstractNode.java      | 44 ++++++++++++++++++++-
+ src/main/java/ast/Command.java           | 12 ------
+ src/main/java/ast/MutationDuplicate.java |  6 ++-
+ src/main/java/ast/MutationGeneral.java   | 23 ++++++++++-
+ src/main/java/ast/MutationReplace.java   |  6 ++-
+ src/main/java/ast/MutationSwap.java      |  6 ++-
+ src/main/java/ast/PrettyPrintTest.java   | 65 --------------------------------
+ src/test/java/parser/ParserTest.java     | 23 -----------
+ 8 files changed, 80 insertions(+), 105 deletions(-)
+
+commit 2a60f0e05064806856554461cc97f89b9f54a06f
+Merge: 2843a6e b6da1d6
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 22:33:05 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 2843a6e903164a88c3b1800bdaa739fce0d8c97f
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 22:32:14 2018 -0400
+
+    delete redu classes
+
+ src/main/java/ast/AbstractNode.java                 |  4 ++--
+ src/main/java/ast/Addop.java                        | 20 --------------------
+ src/main/java/ast/Mulop.java                        | 21 ---------------------
+ src/main/java/ast/Nearby.java                       |  9 ---------
+ src/main/java/ast/NegFactor.java                    |  9 ---------
+ src/main/java/ast/Number.java                       |  9 ---------
+ src/main/java/ast/Random.java                       |  9 ---------
+ src/main/java/ast/Serve.java                        |  9 ---------
+ src/main/java/ast/Smell.java                        |  9 ---------
+ src/main/java/ast/Tag.java                          |  9 ---------
+ src/main/java/ast/UnsupportedMutationException.java | 13 -------------
+ src/test/java/parser/ParserTest.java                |  5 -----
+ 12 files changed, 2 insertions(+), 124 deletions(-)
+
+commit b6da1d613e15b93cab804c910dddd128526b904c
+Merge: be75049 1b12611
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 16 22:20:01 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit be750499f7a2f432ae0ec2c362da9cc681194d6d
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 16 22:19:59 2018 -0400
+
+    Comments
+
+ src/main/java/parse/ParserImpl.java | 34 ++++++++++++++++++----------------
+ 1 file changed, 18 insertions(+), 16 deletions(-)
+
+commit 1b12611fbaf685565e6b7ee8e95bf733d6912c97
+Merge: 10838b0 4c9caca
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 21:41:02 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 10838b06de3b623ee1137d8f5aeefb1ac7d0513c
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 21:40:56 2018 -0400
+
+    Fix bugs in clone()
+
+ src/main/java/ast/AbstractNode.java  |  2 +-
+ src/test/java/parser/ParserTest.java | 30 +++++++++++++++++++++++++-----
+ 2 files changed, 26 insertions(+), 6 deletions(-)
+
+commit 4c9caca75e5f946139103480c0c3b028c53d5bcc
+Merge: 7dc069f 36049b3
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 21:33:31 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 7dc069fecec2df063c88ef46c63779341ff87bcd
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 21:33:29 2018 -0400
+
+    update
+
+ src/main/java/main/ParseAndMutateApp.java | 22 +++++++++++++++++++++-
+ src/test/java/parser/ParserTest.java      |  2 +-
+ src/test/resources/files/draw_critter.txt |  2 +-
+ 3 files changed, 23 insertions(+), 3 deletions(-)
+
+commit 36049b3f36bee42116fe3808ec2b07b1f0a71bd2
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 19:41:41 2018 -0400
+
+    Fix bugs
+
+ src/main/java/ast/MutationDuplicate.java | 20 +++++++++++---------
+ src/main/java/ast/MutationFactory.java   | 17 +++++++++--------
+ src/main/java/ast/ProgramImpl.java       |  6 ------
+ src/test/java/parser/ParserTest.java     |  8 ++++++--
+ 4 files changed, 26 insertions(+), 25 deletions(-)
+
+commit 36f1beb11e4518f3309f8b63bbb676395659cf4a
+Merge: 0e1da2d e6f21eb
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 18:47:24 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 0e1da2d20ee99208c7c77493d3683176688554a0
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 18:46:51 2018 -0400
+
+    Update final Mutations
+
+ src/main/java/ast/Mutation.java          |  4 +-
+ src/main/java/ast/MutationDuplicate.java | 40 +++++++++-----
+ src/main/java/ast/MutationGeneral.java   | 44 +++++++--------
+ src/main/java/ast/MutationReplace.java   | 91 +++++++++++++++++++++++++++-----
+ src/main/java/ast/MutationSwap.java      | 27 ++++------
+ src/main/java/ast/ProgramImpl.java       | 35 ++++++++----
+ src/test/java/parser/ParserTest.java     |  5 +-
+ 7 files changed, 164 insertions(+), 82 deletions(-)
+
+commit e6f21eb409f1b164503a355f78dbaddb5a73d6f4
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 14:22:28 2018 -0400
+
+    update
+
+ src/main/java/ast/AbstractNode.java  | 6 +++---
+ src/main/java/parse/Tokenizer.java   | 1 -
+ src/test/java/parser/ParserTest.java | 2 +-
+ 3 files changed, 4 insertions(+), 5 deletions(-)
+
+commit 9b89016dd86cb8ed55d943973f53eb5212a855b9
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 14:08:13 2018 -0400
+
+    update
+
+ src/main/java/ast/AbstractNode.java        |   7 +-
+ src/main/java/parse/ParserImpl.java        | 141 ++++++-----------------------
+ src/test/java/parser/ParserTest.java       |   3 +-
+ src/test/resources/files/example-rules.txt |   4 +-
+ 4 files changed, 33 insertions(+), 122 deletions(-)
+
+commit f8d46f13f3f96ed3e95b2c1307f19da9c7b607a8
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 16 12:37:27 2018 -0400
+
+    Crappy fix-up of Update
+
+ src/main/java/parse/ParserImpl.java | 93 ++++++++++++++++++++++++++++++++++---
+ 1 file changed, 87 insertions(+), 6 deletions(-)
+
+commit e627571a1df0e5d2b55ae65a1b2b944d8dd37420
+Merge: 5f0adab f26ffdc
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 16 12:22:24 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 5f0adaba7414c7cf40a3b2a9a9df17c9fa7e7484
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 16 12:22:22 2018 -0400
+
+    Update src/main/java/parse/ParserImpl.java
+
+ src/main/java/parse/ParserImpl.java | 36 ++++++++++++++++++++++++------------
+ 1 file changed, 24 insertions(+), 12 deletions(-)
+
+commit f26ffdcd2467505296542934ea4edb277a0edcb4
+Merge: 225c26b 9e59263
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 12:21:53 2018 -0400
+
+    update
+
+commit 225c26bf2145259b052361a4251b7ed6fc45d5dd
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 12:20:08 2018 -0400
+
+    update
+
+ src/main/java/parse/ParserImpl.java        |  6 +++---
+ src/test/java/parser/ParserTest.java       |  5 +++--
+ src/test/resources/files/example-rules.txt | 10 +++-------
+ 3 files changed, 9 insertions(+), 12 deletions(-)
+
+commit 9e59263bcde0181a33dc244a9cccb7cf4d75a242
+Merge: b6fc80a 3040e9a
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 10:23:13 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit b6fc80ae3bfa326dfebc88c126f07a764d1ff663
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 10:23:03 2018 -0400
+
+    Fix bugs in Mutations
+
+ src/main/java/ast/AbstractNode.java                 |  7 ++++---
+ src/main/java/ast/Mutation.java                     |  4 ++--
+ src/main/java/ast/MutationDuplicate.java            | 14 +++++++-------
+ src/main/java/ast/MutationReplace.java              | 14 +++++++-------
+ src/main/java/ast/MutationSwap.java                 |  6 +++---
+ src/main/java/ast/ProgramImpl.java                  |  2 +-
+ src/main/java/ast/UnsupportedMutationException.java |  9 +++++++++
+ src/test/java/parser/ParserTest.java                |  6 +++++-
+ 8 files changed, 38 insertions(+), 24 deletions(-)
+
+commit 3040e9a56615576a84996e824f2a14f5400e3858
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 03:32:14 2018 -0400
+
+    update
+
+ src/main/java/ast/AbstractNode.java    |  9 ++++-----
+ src/main/java/ast/BinaryCondition.java |  4 ++--
+ src/main/java/ast/Command.java         |  2 +-
+ src/main/java/ast/MutationGeneral.java |  6 +++---
+ src/main/java/parse/ParserImpl.java    | 36 +++++++++++++++++-----------------
+ 5 files changed, 28 insertions(+), 29 deletions(-)
+
+commit 5e12493210573172f2da93d9629a4504c7128e7f
+Merge: bb6950c fcc3b57
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 03:24:45 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit bb6950cf2aebc453f819a74d001493acef7234e4
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 03:24:33 2018 -0400
+
+    Add more tests for mutations
+
+ src/main/java/ast/Mutation.java          |  4 +++-
+ src/main/java/ast/MutationDuplicate.java | 10 +++++-----
+ src/main/java/ast/MutationFactory.java   |  3 +++
+ src/main/java/ast/MutationGeneral.java   | 14 +++++++++++++-
+ src/main/java/ast/MutationReplace.java   |  8 ++++----
+ src/main/java/ast/MutationSwap.java      |  5 ++---
+ src/main/java/ast/ProgramImpl.java       |  2 ++
+ 7 files changed, 32 insertions(+), 14 deletions(-)
+
+commit fcc3b5750811cd62a8d4c44256b83ec1154d139d
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 03:23:10 2018 -0400
+
+    update
+
+ src/main/java/ast/AbstractNode.java  | 8 ++++----
+ src/test/java/parser/ParserTest.java | 1 +
+ 2 files changed, 5 insertions(+), 4 deletions(-)
+
+commit 63e422b14bd069c81c88bcf3021ef149e197093a
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 02:12:49 2018 -0400
+
+    update
+
+ src/main/java/ast/ProgramImpl.java  |  2 --
+ src/main/java/ast/Relation.java     |  1 -
+ src/main/java/parse/ParserImpl.java | 16 ++++++++++++----
+ 3 files changed, 12 insertions(+), 7 deletions(-)
+
+commit 0a1ee67b6d37df411fe3acd7bbb4d7a1465be484
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 01:43:07 2018 -0400
+
+    Fix some bugs in mutations and prettyprint
+
+ src/main/java/ast/AbstractNode.java    | 4 ++--
+ src/main/java/ast/MutationFactory.java | 4 ++--
+ src/main/java/ast/MutationGeneral.java | 6 ++++--
+ src/main/java/ast/PrettyPrintTest.java | 4 +++-
+ 4 files changed, 11 insertions(+), 7 deletions(-)
+
+commit f0b118f37ed39ee00ddc76f462587c98b6c6079f
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 16 01:25:20 2018 -0400
+
+    Update ParserImpl
+
+ src/main/java/parse/ParserImpl.java | 66 ++++++++++++++++++++++++++-----------
+ 1 file changed, 46 insertions(+), 20 deletions(-)
+
+commit a3adc1bf91e947b56b19a2b5c82048b8acb53a64
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 01:23:50 2018 -0400
+
+    update
+
+ build.gradle                      |   1 +
+ critterworld.iml                  |  12 ++-
+ gradle/wrapper/gradle-wrapper.jar | Bin 0 -> 53636 bytes
+ gradlew                           |  68 ++++++---------
+ gradlew.bat                       | 174 ++++++++++++++++++++------------------
+ 5 files changed, 124 insertions(+), 131 deletions(-)
+
+commit 9972e416ae69ffb55ddad9812ddd616329d1f966
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 01:21:50 2018 -0400
+
+    Add more prettyprint tests
+
+ src/main/java/ast/PrettyPrintTest.java | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+commit b272e63799c896544909571f6b035f92bf118e07
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 01:21:36 2018 -0400
+
+    Fix bugs in mutations
+
+ src/main/java/ast/AbstractNode.java    | 13 ++++--
+ src/main/java/ast/MutationFactory.java |  6 ---
+ src/main/java/ast/MutationSwap.java    | 80 +++++++++++++++++++++-------------
+ 3 files changed, 58 insertions(+), 41 deletions(-)
+
+commit ce8c4d6eca5c8b931c85d85d05321e19bc157538
+Merge: c1d0175 30173da
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 00:11:29 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit c1d01750a029b0b3cd31f73317cd28df3fb23b72
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Tue Oct 16 00:11:28 2018 -0400
+
+    Update prettyprint
+
+ src/main/java/ast/AbstractNode.java    | 258 ++++++++++-----------------------
+ src/main/java/ast/Condition.java       |   2 +-
+ src/main/java/ast/Expr.java            |   2 +-
+ src/main/java/ast/Node.java            |   4 +-
+ src/main/java/ast/PrettyPrintTest.java |  57 ++++++++
+ 5 files changed, 140 insertions(+), 183 deletions(-)
+
+commit 30173dacc7157403b6975c0f53d0f3c044d25936
+Author: xl289 <xl289@cornell.edu>
+Date:   Mon Oct 15 22:27:35 2018 -0400
+
+    Minor corrections
+
+ src/main/java/ast/Factor.java       |  2 +-
+ src/main/java/parse/ParserImpl.java | 18 +++++++++---------
+ 2 files changed, 10 insertions(+), 10 deletions(-)
+
+commit 766f578921df1eaf9631baf9c2a0d48876e30a95
+Merge: 93f42a9 3a87ad5
+Author: xl289 <xl289@cornell.edu>
+Date:   Mon Oct 15 22:08:02 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 93f42a9d5f880b3b3569c889ce04f16ed04f9db4
+Author: xl289 <xl289@cornell.edu>
+Date:   Mon Oct 15 22:08:00 2018 -0400
+
+    Update MutationDuplicate
+
+ src/main/java/ast/MutationDuplicate.java | 21 +++++++++++++++------
+ 1 file changed, 15 insertions(+), 6 deletions(-)
+
+commit 3a87ad521ebc779070cb5847c603703869000ab9
+Merge: f00fd6c 6499c06
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Oct 15 21:59:51 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit f00fd6c8afbbd3aad0a60625df2c04b0164ed6ae
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Oct 15 21:35:00 2018 -0400
+
+    ParserImpl BugFix #1
+    
+    not sure if this does anything
+
+ src/main/java/parse/ParserImpl.java | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+commit 6499c0619911194636f58c54194ebb588c414214
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Mon Oct 15 21:21:51 2018 -0400
+
+    update
+
+ src/main/java/ast/AbstractNode.java | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 90f31962b5281b06a81bcddb07a48519ac57a7c8
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Mon Oct 15 20:15:07 2018 -0400
+
+    Updated Tokenizer
+    
+    Made sure that it guarded against EOF while ignoring // comments
+
+ src/main/java/parse/Tokenizer.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e590db3b9dde021f4643bf21ea9afd388efe7ac6
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sun Oct 14 23:09:00 2018 -0400
+
+    SyntaxError
+    
+    Includes line number
+
+ src/main/java/parse/ParserImpl.java | 43 +++++++++++++++++++++++--------------
+ 1 file changed, 27 insertions(+), 16 deletions(-)
+
+commit c28829578d46cc50fdc8598af1d24a667fe1baa8
+Merge: f7ddfcd d7ddd2f
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sun Oct 14 23:03:42 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit f7ddfcdc07ad72b17eccc1fa9970aec2b3074d9a
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sun Oct 14 23:03:40 2018 -0400
+
+    Memsugar parsing
+    
+    help me
+
+ src/main/java/parse/ParserImpl.java | 50 ++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 49 insertions(+), 1 deletion(-)
+
+commit d7ddd2fe4ac6d64ea3c9ab4368613448e52eb513
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Oct 14 22:59:23 2018 -0400
+
+    finished pretty print
+
+ src/main/java/ast/AbstractNode.java | 101 ++++++++++++++++++++++--------------
+ src/main/java/ast/Sensor.java       |   2 +-
+ 2 files changed, 64 insertions(+), 39 deletions(-)
+
+commit 87a5527497aa9811496106868ca1d8a1ebc5d2bc
+Author: Guofeng Shi <gs522@cornell.edu>
+Date:   Sun Oct 14 22:26:48 2018 -0400
+
+    finished
+
+ src/main/java/ast/AbstractNode.java | 10 +++++++++-
+ src/main/java/ast/Factor.java       |  2 +-
+ src/main/java/ast/Term.java         |  2 +-
+ 3 files changed, 11 insertions(+), 3 deletions(-)
+
+commit 8df2799511d03c4b77cf7465afb4a441b3d61015
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sun Oct 14 22:23:02 2018 -0400
+
+    StackTrace
+
+ src/main/java/parse/ParserImpl.java | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 1e234b47c43b76b9b2a5886eea6e8fffe0999ce0
+Merge: f886470 b2f0147
+Author: xl289 <xl289@cornell.edu>
+Date:   Sun Oct 14 22:16:11 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit f886470e62f6f086f070152cff006e77d6ed7c1b
+Author: xl289 <xl289@cornell.edu>
+Date:   Sun Oct 14 22:15:36 2018 -0400
+
+    Update Expr
+
+ src/main/java/ast/Expr.java | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b9c4b1ba1162aa857b28067d0c905123af05b459
+Author: xl289 <xl289@cornell.edu>
+Date:   Sun Oct 14 22:15:12 2018 -0400
+
+    Update src/main/java/ast/UnsupportedMutationException.java
+
+ src/main/java/ast/UnsupportedMutationException.java | 4 ----
+ 1 file changed, 4 deletions(-)
+
+commit b2f01473c68c5e59334a480ade6a3bc9440a4b1f
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sun Oct 14 22:14:27 2018 -0400
+
+    PrintStackTrace
+
+ src/main/java/parse/ParserImpl.java | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 2ea85ef9a5fffdb931bb343c29fe036127d304eb
+Merge: 247ed55 7c5437c
+Author: skf37 <timskf37@gmail.com>
+Date:   Sun Oct 14 22:10:54 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 247ed556788d9bf7716600a47f7c586bea7d4e56
+Author: skf37 <timskf37@gmail.com>
+Date:   Sun Oct 14 22:10:52 2018 -0400
+
+    not finished
+
+ src/main/java/ast/AbstractNode.java | 132 ++++++++++++++++++++++++------------
+ src/main/java/ast/Ahead.java        |   9 ---
+ src/main/java/ast/Expr.java         |  17 -----
+ src/main/java/ast/Factor.java       |   3 +-
+ src/main/java/ast/Mem.java          |  11 ---
+ src/main/java/ast/Sensor.java       |   3 +-
+ src/main/java/ast/Term.java         |   3 +-
+ 7 files changed, 93 insertions(+), 85 deletions(-)
+
+commit 7c5437ceef673857fe1dfd5c9135d9a2e247ebdf
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sun Oct 14 22:01:58 2018 -0400
+
+    Update src/main/java/parse/ParserFactory.java
+
+ src/main/java/parse/ParserFactory.java | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit a7295ded13a1046b5609c8409fe5afa947ab2bf7
+Merge: c65aa84 806985f
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sun Oct 14 22:01:43 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit c65aa843dbd1fe45c8c7a2e0e6b2797d0c94333d
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sun Oct 14 22:01:40 2018 -0400
+
+    ParserImpl update
+
+ src/main/java/parse/ParserImpl.java | 110 ++++++++++++++++++++++++++++--------
+ 1 file changed, 85 insertions(+), 25 deletions(-)
+
+commit 806985fd0573192d568f6f0e6b3d7016e192b31c
+Author: xl289 <xl289@cornell.edu>
+Date:   Sun Oct 14 21:57:20 2018 -0400
+
+    Update mutations
+
+ src/main/java/ast/Mutation.java                     |  2 ++
+ src/main/java/ast/MutationGeneral.java              | 20 ++++++++++++++++++++
+ src/main/java/ast/MutationReplace.java              | 16 ++++++++++++++++
+ src/main/java/ast/ProgramImpl.java                  |  9 +++++----
+ src/main/java/ast/UnsupportedMutationException.java |  4 ++++
+ 5 files changed, 47 insertions(+), 4 deletions(-)
+
+commit 2affd9313d06ab85341fe70377f8013f510fcf11
+Author: xl289 <xl289@cornell.edu>
+Date:   Sun Oct 14 20:54:23 2018 -0400
+
+    Fixed minor bugs in mutations
+
+ src/main/java/ast/AbstractNode.java      | 3 ---
+ src/main/java/ast/MutationDuplicate.java | 4 +++-
+ src/main/java/ast/MutationReplace.java   | 4 +++-
+ 3 files changed, 6 insertions(+), 5 deletions(-)
+
+commit 3bd30ff35a94093b35a7e5fe15970d059be9616b
+Author: skf37 <timskf37@gmail.com>
+Date:   Sun Oct 14 01:35:35 2018 -0400
+
+    Finished prettyPrint and Other new Classes
+
+ src/main/java/ast/AbstractNode.java    | 160 ++++++++++++++++++++-------------
+ src/main/java/ast/Ahead.java           |   9 ++
+ src/main/java/ast/BinaryCondition.java |   4 +-
+ src/main/java/ast/Nearby.java          |   9 ++
+ src/main/java/ast/NegFactor.java       |   9 ++
+ src/main/java/ast/Number.java          |   9 ++
+ src/main/java/ast/Random.java          |   9 ++
+ src/main/java/ast/Serve.java           |   9 ++
+ src/main/java/ast/Smell.java           |   9 ++
+ src/main/java/ast/Tag.java             |   9 ++
+ 10 files changed, 172 insertions(+), 64 deletions(-)
+
+commit d719a3e01f9b57208ac06b3db636b1bb5396e4c9
+Merge: 6b5bc39 d27a009
+Author: skf37 <timskf37@gmail.com>
+Date:   Sun Oct 14 00:20:07 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 6b5bc39c60f7957b0e9af2d8ba094d031e61763e
+Author: skf37 <timskf37@gmail.com>
+Date:   Sun Oct 14 00:20:05 2018 -0400
+
+    ignore this
+
+ src/main/java/ast/AbstractNode.java | 39 +++++++++++++++++++++++++++++++++----
+ 1 file changed, 35 insertions(+), 4 deletions(-)
+
+commit 2a18029f9b141fcfbb0db566a6404360613ac8e1
+Author: skf37 <timskf37@gmail.com>
+Date:   Sun Oct 14 00:19:53 2018 -0400
+
+    ignore this
+
+ src/main/java/ast/Mem.java | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit d27a009a291edcaa020afb9e9107437a01a67f4a
+Author: xl289 <xl289@cornell.edu>
+Date:   Sun Oct 14 00:14:47 2018 -0400
+
+    Finished Mutations
+
+ src/main/java/ast/AbstractNode.java      |  7 +++++
+ src/main/java/ast/Mutation.java          |  4 +++
+ src/main/java/ast/MutationDuplicate.java | 11 +++----
+ src/main/java/ast/MutationGeneral.java   | 53 +++++++++++++++++++++++++------
+ src/main/java/ast/MutationReplace.java   | 54 ++++++++++++++++++++++++++++++++
+ src/main/java/ast/MutationSwap.java      |  2 +-
+ src/main/java/ast/Node.java              |  3 +-
+ src/main/java/ast/ProgramImpl.java       |  2 +-
+ 8 files changed, 118 insertions(+), 18 deletions(-)
+
+commit aed399cdbb0fd9f74995c745ece43bd621d7cccf
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Oct 13 22:33:45 2018 -0400
+
+    one more thing
+
+ src/main/java/parse/ParserImpl.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7d26b7749c0ab65b0be4bc36c8aaeca8189c09d2
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Oct 13 22:32:37 2018 -0400
+
+    Finished Parser
+    
+    Still requires extensive commenting.
+
+ src/main/java/ast/BinaryCondition.java |   1 +
+ src/main/java/parse/ParserImpl.java    | 169 +++++++++++++++++++++++----------
+ 2 files changed, 118 insertions(+), 52 deletions(-)
+
+commit f56ff1e3eacc9686ee8c07299c7c20112aa294af
+Author: xl289 <xl289@cornell.edu>
+Date:   Sat Oct 13 18:50:53 2018 -0400
+
+    Create Duplicate Mutation
+
+ src/main/java/ast/Mutation.java          |  8 ++++--
+ src/main/java/ast/MutationDuplicate.java | 34 +++++++++++++++++++++++++
+ src/main/java/ast/MutationGeneral.java   | 43 +++++++++++++++++++++++++++++---
+ src/main/java/ast/MutationSwap.java      | 17 +------------
+ 4 files changed, 81 insertions(+), 21 deletions(-)
+
+commit 71e1f35d9b62811ab79ddb787a5cb20544692a2a
+Author: xl289 <xl289@cornell.edu>
+Date:   Sat Oct 13 18:50:35 2018 -0400
+
+    Create Conjunction
+
+ src/main/java/ast/Conjunction.java | 20 ++++++++++++++++++++
+ src/main/java/ast/Relation.java    |  2 +-
+ 2 files changed, 21 insertions(+), 1 deletion(-)
+
+commit 9ef15e9b86e55e552659e3a60ecdb044e0f4cb51
+Author: xl289 <xl289@cornell.edu>
+Date:   Sat Oct 13 16:55:22 2018 -0400
+
+    Update clone()
+
+ src/main/java/ast/AbstractNode.java | 19 ++++++++++++++++---
+ src/main/java/ast/Action.java       | 21 +++++++++------------
+ src/main/java/ast/Addop.java        | 11 ++++++++++-
+ src/main/java/ast/Command.java      | 17 +----------------
+ src/main/java/ast/Condition.java    |  4 ++++
+ src/main/java/ast/Expr.java         |  4 ++++
+ src/main/java/ast/Factor.java       | 15 ++++++---------
+ src/main/java/ast/Mulop.java        | 11 ++++++++++-
+ src/main/java/ast/Node.java         |  2 ++
+ src/main/java/ast/ProgramImpl.java  | 30 +++++++++++++++++++-----------
+ src/main/java/ast/Rel.java          | 11 ++++++++++-
+ src/main/java/ast/Relation.java     | 15 ++++++---------
+ src/main/java/ast/Rule.java         | 15 ++++++---------
+ src/main/java/ast/Sensor.java       | 15 ++++++---------
+ src/main/java/ast/Term.java         | 15 ++++++---------
+ src/main/java/ast/Update.java       | 10 ++++++++++
+ 16 files changed, 125 insertions(+), 90 deletions(-)
+
+commit b5c3df709c5989ff6b5e3c9d4cdab833a7604f26
+Author: xl289 <xl289@cornell.edu>
+Date:   Sat Oct 13 15:39:15 2018 -0400
+
+    Update Mutations and clone()
+
+ src/main/java/ast/AbstractNode.java    |  7 +++++++
+ src/main/java/ast/Action.java          | 24 ++++++++++-----------
+ src/main/java/ast/Command.java         | 38 +++++++++++++++++++++++++++-------
+ src/main/java/ast/Mutation.java        |  4 ++++
+ src/main/java/ast/MutationFactory.java |  2 +-
+ src/main/java/ast/MutationGeneral.java |  5 ++++-
+ src/main/java/ast/MutationSwap.java    |  3 ++-
+ src/main/java/ast/ProgramImpl.java     |  2 ++
+ src/main/java/ast/Sensor.java          |  2 +-
+ src/main/java/ast/Update.java          | 14 +------------
+ 10 files changed, 65 insertions(+), 36 deletions(-)
+
+commit d03f1af3f7e7a2fb3fe346236991b4e002b7299b
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Oct 13 14:24:16 2018 -0400
+
+    ParserImpl
+    
+    Finishing up the upper level calls, almost done
+
+ src/main/java/parse/ParserImpl.java | 41 +++++++++++++++++++++++++++++--------
+ 1 file changed, 33 insertions(+), 8 deletions(-)
+
+commit 3184f882f90d45550460b8efc4bb54535aa0c411
+Merge: f5f3916 2fec1fb
+Author: xl289 <xl289@cornell.edu>
+Date:   Sat Oct 13 12:16:55 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit f5f3916edb18b564482a0092b9bbbcf0d908ac09
+Author: xl289 <xl289@cornell.edu>
+Date:   Sat Oct 13 12:14:20 2018 -0400
+
+    Update src/main/java/ast/AbstractNode.java
+
+ src/main/java/ast/AbstractNode.java | 154 ++++++++++++++++++------------------
+ 1 file changed, 77 insertions(+), 77 deletions(-)
+
+commit 2fec1fb2d0fd6b050b549c8ec5c5eb9e7e59b4a8
+Author: skf37 <timskf37@gmail.com>
+Date:   Sat Oct 13 12:06:44 2018 -0400
+
+    prettyprint and some extra classes
+
+ src/main/java/ast/AbstractNode.java | 84 ++++++++++++++++++++++++++++++++++++-
+ src/main/java/ast/Addop.java        | 11 +++++
+ src/main/java/ast/Mulop.java        | 12 ++++++
+ src/main/java/ast/Rel.java          | 11 +++++
+ 4 files changed, 117 insertions(+), 1 deletion(-)
+
+commit f217c68c83826d29694a4e7a2b31474718b01851
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Sat Oct 13 02:17:50 2018 -0400
+
+    ParseExprsesion finished(?)
+    
+    Finished the code for ParseExpression, but much testing is required.
+
+ src/main/java/ast/Sensor.java       |  23 ++
+ src/main/java/parse/ParserImpl.java | 415 ++++++++++++++++++++----------------
+ 2 files changed, 256 insertions(+), 182 deletions(-)
+
+commit 09f14e59cbc75cb3d523e0de5d798510be43633a
+Author: xl289 <xl289@cornell.edu>
+Date:   Sat Oct 13 00:28:40 2018 -0400
+
+    Add empty constructor to AbstractNode
+
+ src/main/java/ast/AbstractNode.java                |   8 +
+ src/main/java/ast/Command.java                     |  25 +-
+ src/main/java/ast/Condition.java                   |   8 +
+ src/main/java/ast/Expr.java                        |   4 +-
+ src/main/java/ast/MutationGeneral.java             |   1 +
+ src/main/java/ast/MutationSwap.java                |  26 +-
+ src/main/java/ast/ProgramImpl.java                 |   4 +-
+ src/main/java/ast/Relation.java                    |   4 +-
+ src/main/java/ast/Rule.java                        |   4 +-
+ .../java/ast/UnsupportedMutationException.java     |   4 +
+ src/main/java/parse/ParserImpl.java                | 364 ++++++++++-----------
+ 11 files changed, 242 insertions(+), 210 deletions(-)
+
+commit 4be257b1b6011b81fab1080ff0cf79fe5c9c591a
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Fri Oct 12 19:36:23 2018 -0400
+
+    AbstractNode overloard constructor
+    
+    Should allow new Node(Node n);
+
+ src/main/java/ast/AbstractNode.java | 5 +++++
+ src/main/java/parse/ParserImpl.java | 9 ++++++++-
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+
+commit bdb160adb70708beadfea53183ad6a9d8b74da4b
+Merge: c1754be 603a301
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Fri Oct 12 19:13:19 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit c1754bece9ae87e5798e4ae2816ea631e72c5add
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Fri Oct 12 19:13:17 2018 -0400
+
+    ParserImpl
+
+ src/main/java/parse/ParserImpl.java | 87 +++++++++++++++++++++++++++++++++----
+ src/main/java/parse/Tokenizer.java  |  4 +-
+ 2 files changed, 79 insertions(+), 12 deletions(-)
+
+commit 603a301f4f079a4a4dca7be31e7cc65423b40cbb
+Author: xl289 <xl289@cornell.edu>
+Date:   Fri Oct 12 18:13:58 2018 -0400
+
+    Update clone()
+
+ src/main/java/ast/Action.java          | 14 ++++++++++++++
+ src/main/java/ast/BinaryCondition.java | 12 ++++++++++++
+ src/main/java/ast/Factor.java          | 14 ++++++++++++++
+ src/main/java/ast/ProgramImpl.java     | 20 ++++++++++----------
+ src/main/java/ast/Relation.java        | 14 ++++++++++++++
+ src/main/java/ast/Rule.java            | 14 ++++++++++++++
+ src/main/java/ast/Term.java            | 14 ++++++++++++++
+ src/main/java/ast/Update.java          | 14 ++++++++++++++
+ 8 files changed, 106 insertions(+), 10 deletions(-)
+
+commit bc1c1c97cc342d6b7f4045443d078e4bc6a1c3ce
+Author: xl289 <xl289@cornell.edu>
+Date:   Fri Oct 12 17:34:10 2018 -0400
+
+    Delete accidental comments...ignore this
+
+ src/main/java/parse/ParserImpl.java | 212 ++++++++++++++++++------------------
+ 1 file changed, 106 insertions(+), 106 deletions(-)
+
+commit acf8fe5c539543d762b09718625256abc7253965
+Author: xl289 <xl289@cornell.edu>
+Date:   Fri Oct 12 17:26:12 2018 -0400
+
+    Update Swap Mutation
+
+ src/main/java/ast/MutationFactory.java | 14 ++++++++++++++
+ src/main/java/ast/MutationSwap.java    | 34 +++++++++++++++++++++++++---------
+ 2 files changed, 39 insertions(+), 9 deletions(-)
+
+commit 72790c9108ae0f8b24837476b161e9006b96b250
+Author: xl289 <xl289@cornell.edu>
+Date:   Fri Oct 12 17:25:43 2018 -0400
+
+    Reconstruct Nodes
+
+ .gitignore                             |   1 +
+ src/main/java/ast/AbstractNode.java    |  27 +++--
+ src/main/java/ast/BinaryCondition.java |   7 +-
+ src/main/java/ast/Command.java         |   4 +-
+ src/main/java/ast/ConcreteNode.java    |  23 ----
+ src/main/java/ast/Expr.java            |   4 +-
+ src/main/java/ast/Node.java            |   4 +
+ src/main/java/ast/ProgramImpl.java     |  16 ++-
+ src/main/java/ast/Relation.java        |   4 +-
+ src/main/java/ast/Rule.java            |  20 +---
+ src/main/java/parse/ParserImpl.java    | 212 ++++++++++++++++-----------------
+ 11 files changed, 156 insertions(+), 166 deletions(-)
+
+commit 2db8ddbef7b4fb234baf9c93330ca6959bfab707
+Author: xl289 <xl289@cornell.edu>
+Date:   Fri Oct 12 10:15:27 2018 -0400
+
+    Create Swap Mutation
+
+ src/main/java/ast/MutationGeneral.java | 15 +++++++++++++
+ src/main/java/ast/MutationSwap.java    | 39 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 54 insertions(+)
+
+commit bf664801436e09936506fe87c7a967ae469007d2
+Merge: 67babe5 a9656de
+Author: skf37 <timskf37@gmail.com>
+Date:   Fri Oct 12 10:01:38 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 67babe578cce37da0f3d148991b1f2323ed2ccde
+Merge: 151b3f5 658689e
+Author: skf37 <timskf37@gmail.com>
+Date:   Fri Oct 12 10:01:35 2018 -0400
+
+    ignore
+
+commit a9656deebe15ece6ac006f97bfb6553a5853468a
+Author: xl289 <xl289@cornell.edu>
+Date:   Thu Oct 11 20:43:06 2018 -0400
+
+    Alternative version of nodes that have values
+
+ src/main/java/ast/AbstractNode.java | 5 +++--
+ src/main/java/ast/Action.java       | 4 ++--
+ src/main/java/ast/Command.java      | 3 ++-
+ src/main/java/ast/ConcreteNode.java | 5 +++--
+ src/main/java/ast/Expr.java         | 3 ++-
+ src/main/java/ast/Factor.java       | 4 ++--
+ src/main/java/ast/ProgramImpl.java  | 3 ++-
+ src/main/java/ast/Relation.java     | 3 ++-
+ src/main/java/ast/Rule.java         | 3 ++-
+ src/main/java/ast/Term.java         | 4 ++--
+ src/main/java/ast/Update.java       | 4 ++--
+ 11 files changed, 24 insertions(+), 17 deletions(-)
+
+commit 23884995340ca45a9a743013f9e6fb1a9a12a5fe
+Author: xl289 <xl289@cornell.edu>
+Date:   Thu Oct 11 20:11:45 2018 -0400
+
+    update nodes
+
+ src/main/java/ast/BinaryCondition.java | 3 ++-
+ src/main/java/ast/ConcreteNode.java    | 3 ++-
+ src/main/java/ast/Condition.java       | 5 -----
+ src/main/java/ast/Expr.java            | 3 ++-
+ src/main/java/ast/ProgramImpl.java     | 3 ++-
+ src/main/java/ast/Rule.java            | 3 ++-
+ 6 files changed, 10 insertions(+), 10 deletions(-)
+
+commit 3e7c7bbea0afd1df486090030990c30534204e48
+Author: xl289 <xl289@cornell.edu>
+Date:   Thu Oct 11 20:11:03 2018 -0400
+
+    Update nodes
+
+ src/main/java/ast/AbstractNode.java |  5 -----
+ src/main/java/ast/Command.java      |  3 ++-
+ src/main/java/ast/Conjunction.java  | 10 ----------
+ src/main/java/ast/Relation.java     |  3 ++-
+ 4 files changed, 4 insertions(+), 17 deletions(-)
+
+commit 151b3f5be85c08c823c0a738c0b92333b1afad04
+Author: skf37 <timskf37@gmail.com>
+Date:   Thu Oct 11 20:04:35 2018 -0400
+
+    ignore
+
+ src/main/java/ast/AbstractNode.java | 21 ++-------------------
+ src/main/java/ast/Rule.java         | 18 ++++++++++--------
+ 2 files changed, 12 insertions(+), 27 deletions(-)
+
+commit 658689eeaa554d4718f398bc13588293f2524317
+Author: xl289 <xl289@cornell.edu>
+Date:   Thu Oct 11 20:02:22 2018 -0400
+
+    Refactor nodes
+
+ src/main/java/ast/AbstractNode.java    | 28 +++++-----------------------
+ src/main/java/ast/Action.java          |  4 ++--
+ src/main/java/ast/BinaryCondition.java |  6 ++----
+ src/main/java/ast/Command.java         |  4 ++--
+ src/main/java/ast/ConcreteNode.java    |  7 +++----
+ src/main/java/ast/Condition.java       |  7 +++----
+ src/main/java/ast/Conjunction.java     |  4 ++--
+ src/main/java/ast/Expr.java            |  4 ++--
+ src/main/java/ast/Factor.java          |  4 ++--
+ src/main/java/ast/ProgramImpl.java     |  4 ++--
+ src/main/java/ast/Relation.java        |  4 ++--
+ src/main/java/ast/Rule.java            |  8 ++------
+ src/main/java/ast/Term.java            |  4 ++--
+ src/main/java/ast/Update.java          |  4 ++--
+ 14 files changed, 33 insertions(+), 59 deletions(-)
+
+commit 27a74e294d1d9ecf1074c27f31eef54164447d7f
+Merge: 0488336 20f6894
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Thu Oct 11 00:31:30 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 048833688ff0f4762202fc84a8921a2587fec335
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Thu Oct 11 00:31:02 2018 -0400
+
+    Change in progress
+
+ src/main/java/ast/AbstractNode.java |  7 -------
+ src/main/java/ast/Rule.java         |  9 ++++-----
+ src/main/java/parse/ParserImpl.java | 11 +++++++++--
+ 3 files changed, 13 insertions(+), 14 deletions(-)
+
+commit 20f689400e421b8f4124c3f94000367f25ee5415
+Merge: 8c7873c 2e70420
+Author: skf37 <timskf37@gmail.com>
+Date:   Wed Oct 10 20:34:33 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 8c7873cc8337e7eab7d48ffe01108c24caf9b4d1
+Author: skf37 <timskf37@gmail.com>
+Date:   Wed Oct 10 20:34:31 2018 -0400
+
+    ignore this
+
+ src/main/java/ast/AbstractNode.java | 44 ++++++++-----------------------------
+ src/main/java/ast/ProgramImpl.java  |  6 +++++
+ src/main/java/parse/ParserImpl.java |  3 ++-
+ 3 files changed, 17 insertions(+), 36 deletions(-)
+
+commit 2e70420be918611497afcfd6ffa1251fcd586030
+Merge: 1f1c40b 6eb2f8f
+Author: xl289 <xl289@cornell.edu>
+Date:   Wed Oct 10 20:15:08 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 1f1c40bd598a454774826032f4c2d47d80e8b934
+Author: xl289 <xl289@cornell.edu>
+Date:   Wed Oct 10 20:12:42 2018 -0400
+
+    Create some new classes
+
+ src/main/java/ast/BinaryCondition.java |  6 ++++++
+ src/main/java/ast/Condition.java       |  4 ++--
+ src/main/java/ast/Conjunction.java     | 10 ++++++++++
+ src/main/java/ast/Factor.java          |  9 +++++++++
+ src/main/java/ast/Relation.java        |  9 +++++++++
+ src/main/java/ast/Term.java            |  9 +++++++++
+ 6 files changed, 45 insertions(+), 2 deletions(-)
+
+commit 6eb2f8f7194d1fd575a33c7f290aa392ebf434a6
+Merge: 21ff545 8221999
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Wed Oct 10 20:04:29 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 21ff545408583173abc128fec032c19b8902a743
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Wed Oct 10 20:04:27 2018 -0400
+
+    Update src/main/java/parse/ParserImpl.java
+
+ src/main/java/parse/ParserImpl.java | 52 +++++++++++++++++++++++++++----------
+ 1 file changed, 39 insertions(+), 13 deletions(-)
+
+commit 82219990c3c798ca5dac47d8829dc01a46ad3a1e
+Merge: b4868ca 8580bf8
+Author: skf37 <timskf37@gmail.com>
+Date:   Wed Oct 10 18:39:57 2018 -0400
+
+    ig
+
+commit b4868caf87ceebcb4bcc69f200c5160fb075d76e
+Author: skf37 <timskf37@gmail.com>
+Date:   Wed Oct 10 18:33:05 2018 -0400
+
+    ig this pls
+
+ src/main/java/ast/AbstractNode.java    | 30 +++++++++++++-----------------
+ src/main/java/ast/BinaryCondition.java |  1 +
+ src/main/java/ast/Condition.java       |  7 +++++++
+ src/main/java/ast/Rule.java            |  8 +++++++-
+ 4 files changed, 28 insertions(+), 18 deletions(-)
+
+commit 8580bf8cf6d419483d359a22b74b05c7b93efa38
+Author: xl289 <xl289@cornell.edu>
+Date:   Wed Oct 10 13:50:55 2018 -0400
+
+    Update Command and related classes
+
+ src/main/java/ast/Action.java  | 9 +++++++++
+ src/main/java/ast/Command.java | 2 +-
+ src/main/java/ast/Update.java  | 9 +++++++++
+ 3 files changed, 19 insertions(+), 1 deletion(-)
+
+commit 33bafd7229f7e4a8bfb18d2d0e9757b2ddbefb14
+Author: xl289 <xl289@cornell.edu>
+Date:   Wed Oct 10 13:49:15 2018 -0400
+
+    Create Command class
+
+ src/main/java/ast/Command.java | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 189406ef94f12be67ed8db0580920bf6ba11ebd4
+Author: xl289 <xl289@cornell.edu>
+Date:   Wed Oct 10 13:48:18 2018 -0400
+
+    Add connectParent()
+
+ src/main/java/ast/AbstractNode.java | 10 ++++++++--
+ src/main/java/ast/ConcreteNode.java | 11 ++++-------
+ src/main/java/ast/Expr.java         |  4 ++--
+ src/main/java/ast/ProgramImpl.java  |  4 ++--
+ src/main/java/ast/Rule.java         |  4 ++--
+ 5 files changed, 18 insertions(+), 15 deletions(-)
+
+commit 3ccef0075edc1f40aeb3619dec565d7ad478852a
+Author: xl289 <xl289@cornell.edu>
+Date:   Wed Oct 10 13:26:53 2018 -0400
+
+    Create constructor
+
+ src/main/java/ast/Condition.java   | 7 ++++++-
+ src/main/java/ast/Expr.java        | 7 ++++++-
+ src/main/java/ast/ProgramImpl.java | 6 ++++++
+ src/main/java/ast/Rule.java        | 7 ++++++-
+ 4 files changed, 24 insertions(+), 3 deletions(-)
+
+commit 079e120ce481016b93a92e55f4e53f2ccea2cac6
+Author: xl289 <xl289@cornell.edu>
+Date:   Wed Oct 10 12:51:26 2018 -0400
+
+    Add clone method
+
+ src/main/java/ast/AbstractNode.java | 22 ++++++++++++----------
+ src/main/java/ast/ConcreteNode.java | 23 ++++++++++++++++++++++-
+ 2 files changed, 34 insertions(+), 11 deletions(-)
+
+commit ac5d2c04aabc59251ed01d44a0c42b2a717177c5
+Author: xl289 <xl289@cornell.edu>
+Date:   Wed Oct 10 12:03:22 2018 -0400
+
+    Update AbstractNode
+
+ src/main/java/ast/AbstractNode.java | 49 +++++++++++++++++--------------------
+ 1 file changed, 23 insertions(+), 26 deletions(-)
+
+commit ce07e111e38db91ed3077ff35a6ef231a6f32a71
+Author: xl289 <xl289@cornell.edu>
+Date:   Wed Oct 10 12:00:46 2018 -0400
+
+    Create allNodes()
+
+ src/main/java/ast/Node.java | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit a99ef403639dd4450cb1ac750e07d58780b175a3
+Author: xl289 <xl289@cornell.edu>
+Date:   Wed Oct 10 12:00:11 2018 -0400
+
+    Create concrete class for AbstractNode
+
+ src/main/java/ast/ConcreteNode.java | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit db52b8d2b3aa6c44f92c9ccf1bcbda4593755495
+Merge: 4467d09 ae25d21
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 9 21:33:17 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 4467d09b41ce44baefa0411f5a445757472b39da
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 9 21:33:08 2018 -0400
+
+    Update new size() method
+
+ src/main/java/ast/AbstractNode.java | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit ae25d2149d7f97aebe53ff37dddeacb590baa177
+Author: skf37 <timskf37@gmail.com>
+Date:   Tue Oct 9 21:31:06 2018 -0400
+
+    clone
+    
+    return type still not clear
+
+ src/main/java/ast/BinaryNode.java | 72 ---------------------------------------
+ 1 file changed, 72 deletions(-)
+
+commit a2ca2e0ea9819d011afb43ddb868b71e8d735189
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 9 21:20:22 2018 -0400
+
+    Update AbstractNode
+    
+    made children a list
+
+ src/main/java/ast/AbstractNode.java | 121 ++++++++++++++++--------------------
+ 1 file changed, 54 insertions(+), 67 deletions(-)
+
+commit 63843d37168f76bd552679e8f1b815ba0dc9dc61
+Merge: 7ee0ee5 55f4d46
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 9 21:09:45 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 7ee0ee5213e9ba258c280ccfd6280440bea56ad9
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 9 21:09:43 2018 -0400
+
+    Delete duplicate size()
+
+ src/main/java/ast/AbstractNode.java | 18 ------------------
+ 1 file changed, 18 deletions(-)
+
+commit 55f4d460a5ad941293aff89390b41c5419b422c0
+Author: skf37 <timskf37@gmail.com>
+Date:   Tue Oct 9 21:09:18 2018 -0400
+
+    clone
+
+ src/main/java/ast/AbstractNode.java | 58 ++++++++++++++++++++++---------------
+ 1 file changed, 34 insertions(+), 24 deletions(-)
+
+commit 1fc5075c37aa83a491d1913048f1bb8c0d01648c
+Merge: 9c1778c df5d84d
+Author: skf37 <timskf37@gmail.com>
+Date:   Tue Oct 9 21:00:04 2018 -0400
+
+    Merge branch 'master' of https://github.coecis.cornell.edu/cs2112-fa18/team-cw-gs522-tzz3-xl289-critter_world
+
+commit 9c1778c2f18f9bfc070544045e29a185b11276ba
+Author: skf37 <timskf37@gmail.com>
+Date:   Tue Oct 9 20:51:16 2018 -0400
+
+    ignore this one
+
+ src/main/java/ast/AbstractNode.java | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+
+commit df5d84dc0a06886a39cbb297239043e52dbfa297
+Author: xl289 <xl289@cornell.edu>
+Date:   Tue Oct 9 20:31:04 2018 -0400
+
+    Create BinaryNode
+
+ src/main/java/ast/AbstractNode.java | 20 +++--------
+ src/main/java/ast/BinaryNode.java   | 72 +++++++++++++++++++++++++++++++++++++
+ 2 files changed, 77 insertions(+), 15 deletions(-)
+
+commit 242fee784bc13537af640b5047d49f7b701b0439
+Author: Tony Ziqian Zhang <tzz3@cornell.edu>
+Date:   Tue Oct 9 15:25:43 2018 -0400
+
+    Tokenizer
+    
+    Altered it so that it will skip // and look for another token after that.
+
+ critterworld.iml                         | 23 +++++++++++++++++++++++
+ src/main/java/parse/LookAheadBuffer.java |  8 ++++++++
+ src/main/java/parse/Tokenizer.java       | 16 ++++++++++++++++
+ 3 files changed, 47 insertions(+)
+
+commit 99a43bd0893c32c25ef16c182da2068c3dc50557
+Author: skf37 <timskf37@gmail.com>
+Date:   Mon Oct 8 22:34:17 2018 -0400
+
+    abstractnode
+
+ .DS_Store                                  | Bin 0 -> 6148 bytes
+ .classpath                                 |  24 ++++++++++++++++++++++++
+ .gitignore                                 |   1 +
+ .project                                   |  23 +++++++++++++++++++++++
+ .settings/org.eclipse.buildship.core.prefs |   2 ++
+ .settings/org.eclipse.jdt.core.prefs       |   4 ++++
+ bin/.gitignore                             |   3 +++
+ src/.DS_Store                              | Bin 0 -> 6148 bytes
+ src/main/.DS_Store                         | Bin 0 -> 6148 bytes
+ src/main/java/.DS_Store                    | Bin 0 -> 6148 bytes
+ src/main/java/ast/AbstractNode.java        |  18 ++++++++++++++----
+ 11 files changed, 71 insertions(+), 4 deletions(-)
+
+commit e8834ddabfa8d03948015d1bf3222592d59f5b7a
+Author: xl289 <xl289@cornell.edu>
+Date:   Mon Oct 8 21:45:44 2018 -0400
+
+    Update .gitignore
+
+ .gitignore | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit dc5c5ee9a3a93e79088c0a839e4cef4829af7414
+Author: Lucas Silver <lag47@Lucass-MacBook-Pro.local>
+Date:   Thu Oct 4 21:58:14 2018 -0400
+
+    updated starter code
+
+ README.md                                      |   6 +
+ build.gradle                                   |  38 +++
+ gradlew                                        | 172 +++++++++++++
+ gradlew.bat                                    |  84 ++++++
+ settings.gradle                                |   1 +
+ src/main/java/ast/AbstractNode.java            |  55 ++++
+ src/main/java/ast/BinaryCondition.java         |  26 ++
+ src/main/java/ast/Condition.java               |   8 +
+ src/main/java/ast/Expr.java                    |   8 +
+ src/main/java/ast/Mutation.java                |  15 ++
+ src/main/java/ast/MutationFactory.java         |  37 +++
+ src/main/java/ast/Node.java                    |  99 ++++++++
+ src/main/java/ast/Program.java                 |  28 ++
+ src/main/java/ast/ProgramImpl.java             |  21 ++
+ src/main/java/ast/Rule.java                    |   8 +
+ src/main/java/exceptions/SyntaxError.java      |  11 +
+ src/main/java/main/ParseAndMutateApp.java      |  27 ++
+ src/main/java/parse/LookAheadBuffer.java       |  70 +++++
+ src/main/java/parse/Parser.java                |  22 ++
+ src/main/java/parse/ParserFactory.java         |  17 ++
+ src/main/java/parse/ParserImpl.java            |  72 ++++++
+ src/main/java/parse/Token.java                 | 246 ++++++++++++++++++
+ src/main/java/parse/TokenCategory.java         |  14 +
+ src/main/java/parse/TokenType.java             | 122 +++++++++
+ src/main/java/parse/Tokenizer.java             | 338 +++++++++++++++++++++++++
+ src/test/java/parser/ParserTest.java           |  33 +++
+ src/test/resources/files/draw_critter.txt      |   6 +
+ src/test/resources/files/example-rules.txt     |  24 ++
+ src/test/resources/files/mutated_critter_1.txt |  14 +
+ src/test/resources/files/mutated_critter_2.txt |  14 +
+ src/test/resources/files/mutated_critter_3.txt |  14 +
+ src/test/resources/files/mutated_critter_4.txt |  14 +
+ src/test/resources/files/mutated_critter_5.txt |  14 +
+ src/test/resources/files/mutated_critter_6.txt |  16 ++
+ src/test/resources/files/unmutated_critter.txt |  13 +
+ 35 files changed, 1707 insertions(+)
